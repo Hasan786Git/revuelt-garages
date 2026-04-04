@@ -11,7 +11,7 @@
    then plays forward again — continuously.
 ------------------------------------------------------------- */
 (function initBoomerang() {
-  const heroVideo = document.querySelector('#home video');
+  const heroVideo = document.getElementById('hero-video');
   if (!heroVideo) return;
 
   let isReversing = false;
