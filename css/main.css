@@ -474,10 +474,10 @@ textarea {
 }
 
 #home video {
-  /* YouTube/Vimeo background-video technique:
-     Size by aspect ratio so the video always bleeds past all four edges.
-     16:9 → height = width * 9/16 = 56.25vw
-             width = height * 16/9 = 177.78vh                          */
+  display: none; /* fallback — overridden by #hero-video below */
+}
+
+#hero-video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -487,9 +487,6 @@ textarea {
   min-width: 177.78vh; /* 16:9: width tracks viewport height  */
   transform: translate(-50%, -50%);
   z-index: 0;
-  /* GPU compositor layer — keeps currentTime scrubbing off the main thread */
-  will-change: transform;
-  backface-visibility: hidden;
 }
 
 #home .hero-overlay {

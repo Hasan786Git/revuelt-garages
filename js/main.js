@@ -10,55 +10,13 @@
    Plays forward, then scrubs backward frame-by-frame (~30fps),
    then plays forward again — continuously.
 ------------------------------------------------------------- */
-(function initBoomerang() {
-  const heroVideo = document.getElementById('hero-video');
-  if (!heroVideo) return;
-
-  let isReversing = false;
-  let rafId;
-
-  function reversePlay() {
-    if (heroVideo.currentTime <= 0) {
-      cancelAnimationFrame(rafId);
-      isReversing = false;
-      heroVideo.currentTime = 0;
-      heroVideo.play();
-      return;
-    }
-    heroVideo.currentTime = Math.max(0, heroVideo.currentTime - 0.05);
-    rafId = requestAnimationFrame(reversePlay);
-  }
-
-  heroVideo.addEventListener('loadedmetadata', () => {
-    heroVideo.play();
-  });
-
-  heroVideo.addEventListener('ended', () => {
-    if (!isReversing) {
-      isReversing = true;
-      heroVideo.pause();
-      rafId = requestAnimationFrame(reversePlay);
-    }
-  });
-
-  // Pause boomerang while user scrolls — currentTime writes compete with
-  // scroll compositing. Resume 150ms after scrolling stops.
-  let scrollTimer;
-  let boomerangPaused = false;
-
-  window.addEventListener('scroll', () => {
-    if (!boomerangPaused) {
-      boomerangPaused = true;
-      heroVideo.pause();
-      cancelAnimationFrame(rafId);
-    }
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(() => {
-      boomerangPaused = false;
-      heroVideo.play();
-    }, 150);
-  }, { passive: true });
-})();
+/* -------------------------------------------------------------
+   0. HERO VIDEO
+------------------------------------------------------------- */
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  heroVideo.play().catch(() => {});
+}
 
 
 /* -------------------------------------------------------------
