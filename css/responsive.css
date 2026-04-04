@@ -1,0 +1,193 @@
+/* =============================================================
+   REVUELT GARAGES — responsive.css
+   Mobile-first breakpoint overrides
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   Breakpoints used:
+     xs:  < 480px   (small phones)
+     sm:  >= 480px  (large phones)
+     md:  >= 768px  (tablets / landscape phones)
+     lg:  >= 1024px (desktop)
+     xl:  >= 1280px (wide desktop)
+------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------
+   MOBILE DEFAULT (< 768px)
+   Most styles in main.css are already mobile-friendly.
+   These rules correct layouts that assume wider screens.
+------------------------------------------------------------- */
+
+/* Show hamburger, hide desktop links + CTA */
+.nav__links,
+.nav__cta {
+  display: none;
+}
+
+.nav__hamburger {
+  display: flex;
+}
+
+/* Stack form rows on mobile */
+.form-row {
+  grid-template-columns: 1fr;
+}
+
+/* Stack about split */
+.about-split {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.about-split__visual {
+  order: -1; /* image above text on mobile */
+  max-height: 280px;
+  aspect-ratio: unset;
+}
+
+/* Stack contact split */
+.contact-split {
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+/* Tighten process step gap on mobile */
+.process-step {
+  gap: 20px;
+  padding: 28px 0;
+}
+
+/* Footer stacks */
+.footer__inner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero__scroll {
+  display: none; /* hide scroll indicator on small screens */
+}
+
+
+/* -------------------------------------------------------------
+   SM — 480px+
+------------------------------------------------------------- */
+@media (min-width: 480px) {
+  .hero__actions {
+    flex-wrap: nowrap;
+  }
+
+  .about-split__visual {
+    max-height: 340px;
+  }
+}
+
+
+/* -------------------------------------------------------------
+   MD — 768px+  (tablets and up)
+------------------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Restore desktop nav */
+  .nav__links {
+    display: flex;
+  }
+
+  .nav__cta {
+    display: inline-flex;
+  }
+
+  .nav__hamburger {
+    display: none;
+  }
+
+  /* Mobile menu should never show at this breakpoint */
+  .mobile-menu {
+    display: none !important;
+  }
+
+  /* Restore form rows */
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Show scroll indicator */
+  .hero__scroll {
+    display: flex;
+  }
+
+  /* Restore about layout */
+  .about-split {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .about-split__visual {
+    order: 0;
+    max-height: unset;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Contact side-by-side */
+  .contact-split {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+  }
+
+  /* Footer horizontal */
+  .footer__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+/* -------------------------------------------------------------
+   LG — 1024px+  (desktop)
+------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  /* Wider process step gap */
+  .process-step {
+    gap: 48px;
+    padding: 40px 0;
+  }
+
+  .about-split {
+    gap: 80px;
+  }
+
+  .contact-split {
+    gap: 80px;
+  }
+}
+
+
+/* -------------------------------------------------------------
+   XL — 1280px+  (wide desktop)
+------------------------------------------------------------- */
+@media (min-width: 1280px) {
+  /* Slightly more breathing room on very wide screens */
+  .parts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .doors-showcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* -------------------------------------------------------------
+   REDUCED MOTION
+   Respect users who prefer minimal animation
+------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior:      auto !important;
+  }
+}

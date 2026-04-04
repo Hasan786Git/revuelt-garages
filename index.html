@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Revuelt Garages — B2B garage door parts distributor. Trade contractors only. Dallas-Fort Worth, Texas." />
+  <title>Revuelt Garages — Trade Parts Distributor</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="#home" class="nav__logo" aria-label="Revuelt Garages home">
+        <img src="assets/logo-white.png" alt="Revuelt Garages logo" width="140" height="auto" />
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav__links" role="list">
+        <li><a href="#parts"   class="nav__link">Parts</a></li>
+        <li><a href="#sample"  class="nav__link">Sample Kit</a></li>
+        <li><a href="#doors"   class="nav__link">Doors</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#about"   class="nav__link">About</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#sample" class="nav__cta btn btn--orange">Free Sample Kit</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-menu__links" role="list">
+        <li><a href="#parts"   class="mobile-menu__link">Parts</a></li>
+        <li><a href="#sample"  class="mobile-menu__link">Sample Kit</a></li>
+        <li><a href="#doors"   class="mobile-menu__link">Doors</a></li>
+        <li><a href="#process" class="mobile-menu__link">Process</a></li>
+        <li><a href="#about"   class="mobile-menu__link">About</a></li>
+        <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+        <li><a href="#sample"  class="mobile-menu__link mobile-menu__link--cta">Free Sample Kit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 01 — HOME / HERO
+       ES: Inicio
+  ============================================================ -->
+  <section id="home" class="section section--hero">
+
+    <!-- Video background -->
+    <video class="hero__video" src="assets/videos/hero-bg.mp4" autoplay muted playsinline aria-hidden="true"></video>
+    <!-- Dark overlay sits on top of video -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- All content above overlay -->
+    <div class="hero-content">
+
+      <span class="section__label">// 01 &nbsp; INICIO</span>
+
+      <!-- Contractors only badge -->
+      <span class="hero__badge">Contractors Only</span>
+
+      <h1 class="hero__heading">
+        <span class="hero__heading-small">Supplying the crews that keep</span>
+        DFW Moving.
+      </h1>
+
+      <div class="hero__actions">
+        <a href="#parts"  class="btn btn--orange">Get Parts &amp; Pricing</a>
+        <a href="#sample" class="btn btn--ghost">Order Free Sample Kit</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-label">Scroll</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 02 — PARTS
+       ES: Piezas
+  ============================================================ -->
+  <section id="parts" class="section section--alt">
+    <div class="section__inner">
+
+      <span class="section__label">// 02 &nbsp; PIEZAS</span>
+      <h2 class="section__heading">The Parts<br /><span class="text--orange">You Need.</span></h2>
+
+      <p class="section__body">
+        Springs, cables, tracks, rollers, openers, and more — stocked for commercial and residential installs.
+        We supply trade contractors with the same parts the big shops use, without the markup.
+      </p>
+
+      <!-- Parts grid placeholder -->
+      <div class="parts-grid">
+        <div class="parts-card">
+          <div class="parts-card__img placeholder-img"></div>
+          <h3 class="parts-card__title">Torsion Springs</h3>
+          <p class="parts-card__desc">High-cycle rated. Standard &amp; custom coil sizes available.</p>
+        </div>
+        <div class="parts-card">
+          <div class="parts-card__img placeholder-img"></div>
+          <h3 class="parts-card__title">Cables &amp; Drums</h3>
+          <p class="parts-card__desc">Aircraft-grade cables. Paired drum sets in stock.</p>
+        </div>
+        <div class="parts-card">
+          <div class="parts-card__img placeholder-img"></div>
+          <h3 class="parts-card__title">Tracks &amp; Hardware</h3>
+          <p class="parts-card__desc">Radius tracks, flag angles, and full hardware kits.</p>
+        </div>
+        <div class="parts-card">
+          <div class="parts-card__img placeholder-img"></div>
+          <h3 class="parts-card__title">Operators &amp; Controls</h3>
+          <p class="parts-card__desc">Commercial openers, remotes, keypads, and safety sensors.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 03 — SAMPLE KIT
+       ES: Kit de Muestra
+  ============================================================ -->
+  <section id="sample" class="section">
+    <div class="section__inner">
+
+      <span class="section__label">// 03 &nbsp; KIT DE MUESTRA</span>
+      <h2 class="section__heading">Free<br /><span class="text--orange">Sample Kit.</span></h2>
+
+      <p class="section__body">
+        Not sure yet? Request a free sample kit — touch and compare our hardware before committing to an order.
+        For licensed contractors only. Ships within 2 business days.
+      </p>
+
+      <form class="sample-form" id="sampleForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Carlos" autocomplete="given-name" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Reyes" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Reyes Garage Co." autocomplete="organization" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="carlos@reyesgarage.com" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group form-group--full">
+            <label for="licenseNumber">Contractor License #</label>
+            <input type="text" id="licenseNumber" name="licenseNumber" placeholder="TX-XXXXXXXX" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn--orange btn--lg">Request My Free Kit</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 04 — DOORS
+       ES: Puertas
+  ============================================================ -->
+  <section id="doors" class="section section--alt">
+    <div class="section__inner">
+
+      <span class="section__label">// 04 &nbsp; PUERTAS</span>
+      <h2 class="section__heading">Complete<br /><span class="text--orange">Door Lines.</span></h2>
+
+      <p class="section__body">
+        Full sectional door panels, commercial rolling doors, and specialty fire-rated options.
+        We carry the lines your clients are asking for — ready to quote.
+      </p>
+
+      <!-- Doors showcase placeholder -->
+      <div class="doors-showcase">
+        <div class="door-item">
+          <div class="door-item__img placeholder-img placeholder-img--tall"></div>
+          <h3 class="door-item__title">Residential Sectional</h3>
+          <p class="door-item__spec">Steel &amp; insulated options — R-6 to R-18</p>
+        </div>
+        <div class="door-item">
+          <div class="door-item__img placeholder-img placeholder-img--tall"></div>
+          <h3 class="door-item__title">Commercial Rolling</h3>
+          <p class="door-item__spec">Sheet &amp; grille — manual or motorized</p>
+        </div>
+        <div class="door-item">
+          <div class="door-item__img placeholder-img placeholder-img--tall"></div>
+          <h3 class="door-item__title">Fire-Rated</h3>
+          <p class="door-item__spec">UL-listed 1.5 &amp; 3 hour assemblies</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 05 — PROCESS
+       ES: Proceso
+  ============================================================ -->
+  <section id="process" class="section">
+    <div class="section__inner">
+
+      <span class="section__label">// 05 &nbsp; PROCESO</span>
+      <h2 class="section__heading">How It<br /><span class="text--orange">Works.</span></h2>
+
+      <p class="section__body">
+        No storefront. No retail lines. Just a direct pipeline from our warehouse to your truck.
+      </p>
+
+      <ol class="process-steps" role="list">
+        <li class="process-step">
+          <span class="process-step__num">01</span>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Get Verified</h3>
+            <p class="process-step__desc">Submit your contractor license. We verify within 24 hours. Trade accounts only.</p>
+          </div>
+        </li>
+        <li class="process-step">
+          <span class="process-step__num">02</span>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Place Your Order</h3>
+            <p class="process-step__desc">Order online or call your account rep. Volume pricing kicks in automatically.</p>
+          </div>
+        </li>
+        <li class="process-step">
+          <span class="process-step__num">03</span>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Fast Fulfillment</h3>
+            <p class="process-step__desc">Same-day warehouse pull for orders before 2PM. DFW local delivery or nationwide shipping.</p>
+          </div>
+        </li>
+        <li class="process-step">
+          <span class="process-step__num">04</span>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Keep Building</h3>
+            <p class="process-step__desc">Reorder in seconds. Net-30 accounts available for qualified contractors.</p>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 06 — ABOUT
+       ES: Nosotros
+  ============================================================ -->
+  <section id="about" class="section section--alt">
+    <div class="section__inner">
+
+      <span class="section__label">// 06 &nbsp; NOSOTROS</span>
+      <h2 class="section__heading">Who We<br /><span class="text--orange">Are.</span></h2>
+
+      <div class="about-split">
+        <div class="about-split__text">
+          <p class="section__body">
+            Revuelt Garages was built by contractors, for contractors. We got tired of paying retail prices
+            and waiting weeks for parts that should be on a truck tomorrow.
+          </p>
+          <p class="section__body">
+            Based in the Dallas-Fort Worth metroplex, we stock what the market demands and deliver on a timeline
+            that keeps your crews moving. B2B only — no homeowners, no retail.
+          </p>
+          <ul class="about-stats" role="list">
+            <li class="about-stat">
+              <span class="about-stat__num">500<span class="text--orange">+</span></span>
+              <span class="about-stat__label">SKUs In Stock</span>
+            </li>
+            <li class="about-stat">
+              <span class="about-stat__num">2<span class="text--orange">x</span></span>
+              <span class="about-stat__label">Day Avg. Fulfillment</span>
+            </li>
+            <li class="about-stat">
+              <span class="about-stat__num">DFW<span class="text--orange">.</span></span>
+              <span class="about-stat__label">Local Delivery</span>
+            </li>
+          </ul>
+        </div>
+        <div class="about-split__visual placeholder-img placeholder-img--square"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 07 — CONTACT
+       ES: Contacto
+  ============================================================ -->
+  <section id="contact" class="section">
+    <div class="section__inner">
+
+      <span class="section__label">// 07 &nbsp; CONTACTO</span>
+      <h2 class="section__heading">Get In<br /><span class="text--orange">Touch.</span></h2>
+
+      <div class="contact-split">
+
+        <div class="contact-info">
+          <p class="section__body">
+            Ready to open a trade account or have a quick question? Reach out — we keep response times short.
+          </p>
+          <ul class="contact-details" role="list">
+            <li class="contact-detail">
+              <span class="contact-detail__label">Phone</span>
+              <a href="tel:+19725550000" class="contact-detail__value">(972) 555-0000</a>
+            </li>
+            <li class="contact-detail">
+              <span class="contact-detail__label">Email</span>
+              <a href="mailto:trade@revueltgarages.com" class="contact-detail__value">trade@revueltgarages.com</a>
+            </li>
+            <li class="contact-detail">
+              <span class="contact-detail__label">Location</span>
+              <span class="contact-detail__value">Dallas-Fort Worth, TX</span>
+            </li>
+            <li class="contact-detail">
+              <span class="contact-detail__label">Hours</span>
+              <span class="contact-detail__value">Mon–Fri, 7AM–5PM CST</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your full name" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="you@yourcompany.com" autocomplete="email" required />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about your needs..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--orange">Send Message</button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <a href="#home" class="footer__logo" aria-label="Back to top">
+        <img src="assets/logo-white.png" alt="Revuelt Garages" width="120" height="auto" />
+      </a>
+      <p class="footer__copy">
+        &copy; <span id="footerYear"></span> Revuelt Garages. Trade accounts only.
+        Dallas-Fort Worth, TX.
+      </p>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#parts"   class="footer__link">Parts</a>
+        <a href="#sample"  class="footer__link">Sample Kit</a>
+        <a href="#contact" class="footer__link">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
