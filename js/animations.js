@@ -1,368 +1,260 @@
-/* =============================================================
-   REVUELT GARAGES — animations.js
-   GSAP + ScrollTrigger entrance animations.
-   Runs after main.js and GSAP CDN scripts are loaded.
-   ============================================================= */
-
 'use strict';
 
-/* Wait for GSAP to be available (loaded via defer CDN tags) */
 window.addEventListener('load', function initAnimations() {
-  // Guard: if GSAP or ScrollTrigger aren't loaded, bail silently
+
+  // Check GSAP is loaded
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    console.warn('Revuelt: GSAP not loaded — skipping animations.');
-    // Ensure all animated elements are visible even without GSAP
-    document.querySelectorAll(
-      '.process-step, .process-features, .parts-card, .about-left, .about-right, .stat-item, .about-mission, .fade-up, .stagger-children > *'
-    ).forEach(el => {
-      el.style.opacity  = '1';
-      el.style.transform = 'none';
-    });
+    console.warn('GSAP not loaded');
     return;
   }
 
-  // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  /* -----------------------------------------------------------
-     Shared defaults for ScrollTrigger
-  ----------------------------------------------------------- */
-  const ST_DEFAULTS = {
-    start:   'top 85%',  // trigger when element top is 85% down viewport
-    end:     'top 40%',
-    toggleActions: 'play none none none',
-  };
-
-  /* -----------------------------------------------------------
-     Helper: fade-up a set of elements with optional stagger
-  ----------------------------------------------------------- */
-  function fadeUp(targets, opts = {}) {
-    if (!document.querySelectorAll(targets).length) return;
-    gsap.to(targets, {
-      opacity:  1,
-      y:        0,
-      duration: opts.duration ?? 0.75,
-      ease:     opts.ease ?? 'power3.out',
-      stagger:  opts.stagger ?? 0,
-      scrollTrigger: {
-        trigger: opts.trigger ?? targets,
-        ...ST_DEFAULTS,
-        ...opts.scrollTrigger,
-      },
-    });
-  }
-
-  /* -----------------------------------------------------------
-     1. HERO — animate on page load (no ScrollTrigger needed)
-  ----------------------------------------------------------- */
-  const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
+  // ── HERO LOAD-IN ──────────────────────────────────────────────
+  const heroTl = gsap.timeline({ delay: 0.3 });
   heroTl
-    .from('.section--hero .section__label', { opacity: 0, y: 20, duration: 0.6 }, 0.3)
-    .from('.hero__badge',              { opacity: 0, y: 16, duration: 0.5 }, 0.5)
-    .from('.hero__heading-small',      { opacity: 0, y: 20, duration: 0.6 }, 0.65)
-    .from('.hero__heading',            { opacity: 0, y: 48, duration: 0.9 }, 0.72)
-    .from('.hero__actions .btn', {
-      opacity: 0,
-      y: 24,
-      duration: 0.6,
-      stagger: 0.12,
-    }, 1.05)
-    .from('.scroll-indicator',         { opacity: 0, duration: 0.5 }, 1.35);
+    .from('.hero-badge', {
+      opacity: 0, y: 20, duration: 0.6, ease: 'power2.out'
+    })
+    .from('.hero-small-line', {
+      opacity: 0, y: 20, duration: 0.6, ease: 'power2.out'
+    }, '-=0.3')
+    .from('.hero-headline', {
+      opacity: 0, y: 40, duration: 0.8, ease: 'power2.out'
+    }, '-=0.4')
+    .from('.hero-subtext', {
+      opacity: 0, y: 20, duration: 0.6, ease: 'power2.out'
+    }, '-=0.3')
+    .from('.hero-buttons', {
+      opacity: 0, y: 20, duration: 0.6, ease: 'power2.out'
+    }, '-=0.3');
 
-  /* -----------------------------------------------------------
-     2. SECTION LABELS (all except hero)
-  ----------------------------------------------------------- */
-  document.querySelectorAll('.section:not(.section--hero) .section__label').forEach((el) => {
-    gsap.from(el, {
-      opacity:  0,
-      x:        -20,
-      duration: 0.5,
-      ease:     'power2.out',
-      scrollTrigger: { trigger: el, ...ST_DEFAULTS },
-    });
+  // ── PRODUCTS SECTION ──────────────────────────────────────────
+  gsap.from('#parts .section-header', {
+    opacity: 0, y: 60, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#parts',
+      start: 'top 80%',
+    }
   });
 
-  /* -----------------------------------------------------------
-     3. SECTION HEADINGS
-  ----------------------------------------------------------- */
-  document.querySelectorAll('.section:not(.section--hero) .section__heading').forEach((el) => {
-    gsap.from(el, {
-      opacity:  0,
-      y:        48,
-      duration: 0.85,
-      ease:     'power3.out',
-      scrollTrigger: { trigger: el, start: 'top 88%' },
-    });
+  gsap.from('.product-card', {
+    opacity: 0, y: 60, duration: 0.7, ease: 'power2.out',
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.product-card',
+      start: 'top 85%',
+    }
   });
 
-  /* -----------------------------------------------------------
-     4. SECTION BODY TEXT
-  ----------------------------------------------------------- */
-  document.querySelectorAll('.section__body').forEach((el) => {
-    gsap.from(el, {
-      opacity:  0,
-      y:        28,
-      duration: 0.7,
-      ease:     'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 88%' },
-    });
+  // ── FREE SAMPLE KIT ───────────────────────────────────────────
+  gsap.from('.orange-accent-line', {
+    scaleY: 0, duration: 0.6, ease: 'power2.out',
+    transformOrigin: 'top center',
+    scrollTrigger: {
+      trigger: '#sample',
+      start: 'top 80%',
+    }
   });
 
-  /* -----------------------------------------------------------
-     5. PARTS CARDS — fade-up with 0.1s stagger
-     Initial opacity/transform set in CSS on .parts-card
-  ----------------------------------------------------------- */
-  if (document.querySelector('.parts-card')) {
-    gsap.to('.parts-card', {
-      opacity:   1,
-      y:         0,
-      duration:  0.65,
-      ease:      'power3.out',
-      stagger:   0.1,
-      scrollTrigger: {
-        trigger: '.parts-grid',
-        start:   'top 82%',
-      },
+  gsap.from('.sample-kit-content .badge-pill', {
+    opacity: 0, y: 30, duration: 0.6, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#sample',
+      start: 'top 75%',
+    }
+  });
+
+  gsap.from('.sample-kit-content h2', {
+    opacity: 0, y: 50, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#sample',
+      start: 'top 75%',
+    }
+  });
+
+  gsap.from('.sample-kit-content p', {
+    opacity: 0, y: 30, duration: 0.7, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#sample',
+      start: 'top 70%',
+    }
+  });
+
+  gsap.from('.sample-kit-content .btn-primary', {
+    opacity: 0, y: 30, duration: 0.6, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#sample',
+      start: 'top 65%',
+    }
+  });
+
+  // ── GARAGE DOORS ──────────────────────────────────────────────
+  gsap.from('#doors .section-label', {
+    opacity: 0, duration: 0.6, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#doors',
+      start: 'top 80%',
+    }
+  });
+
+  gsap.from('#doors h2', {
+    opacity: 0, y: 80, duration: 1.0, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#doors',
+      start: 'top 75%',
+    }
+  });
+
+  gsap.from('#doors .doors-subline', {
+    opacity: 0, y: 40, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#doors',
+      start: 'top 70%',
+    }
+  });
+
+  gsap.from('#doors .door-types', {
+    opacity: 0, y: 30, duration: 0.7, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#doors',
+      start: 'top 65%',
+    }
+  });
+
+  gsap.from('#doors .badge-pill, #doors .btn-outline', {
+    opacity: 0, y: 20, duration: 0.6, ease: 'power2.out',
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: '#doors',
+      start: 'top 60%',
+    }
+  });
+
+  // ── HOW IT WORKS ──────────────────────────────────────────────
+  gsap.from('#process .section-header', {
+    opacity: 0, y: 60, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#process',
+      start: 'top 80%',
+    }
+  });
+
+  gsap.from('.process-step', {
+    opacity: 0, y: 60, duration: 0.8, ease: 'power2.out',
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.process-step',
+      start: 'top 85%',
+    }
+  });
+
+  gsap.from('.feature-strip .feature-item', {
+    opacity: 0, y: 40, duration: 0.7, ease: 'power2.out',
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: '.feature-strip',
+      start: 'top 85%',
+    }
+  });
+
+  // ── ABOUT ─────────────────────────────────────────────────────
+  gsap.from('#about .about-left', {
+    opacity: 0, x: -60, duration: 0.9, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#about',
+      start: 'top 80%',
+    }
+  });
+
+  gsap.from('#about .about-right', {
+    opacity: 0, x: 60, duration: 0.9, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#about',
+      start: 'top 80%',
+    }
+  });
+
+  // COUNTING STATS
+  const statsEl = document.querySelector('.stats-row');
+  if (statsEl) {
+    ScrollTrigger.create({
+      trigger: '.stats-row',
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        // Count up 1000
+        const counter = { val: 0 };
+        const target = document.querySelector(
+          '.stat-number[data-count="1000"]'
+        );
+        if (target) {
+          gsap.to(counter, {
+            val: 1000,
+            duration: 2,
+            ease: 'power2.out',
+            onUpdate: () => {
+              target.textContent =
+                Math.ceil(counter.val).toLocaleString() + '+';
+            }
+          });
+        }
+      }
     });
   }
 
-  /* -----------------------------------------------------------
-     6. PROCESS SECTION — steps stagger + feature strip
-  ----------------------------------------------------------- */
-  if (document.querySelector('.process-section')) {
-    /* Header */
-    gsap.from('.process-header', {
-      opacity:  0,
-      y:        32,
-      duration: 0.7,
-      ease:     'power3.out',
-      scrollTrigger: { trigger: '.process-header', start: 'top 85%' },
-    });
+  gsap.from('.mission-strip', {
+    opacity: 0, y: 40, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.mission-strip',
+      start: 'top 85%',
+    }
+  });
 
-    /* Steps — fade up with 0.2s stagger between each */
-    gsap.to('.process-step', {
-      opacity:  1,
-      y:        0,
-      duration: 0.65,
-      ease:     'power3.out',
-      stagger:  0.2,
-      scrollTrigger: {
-        trigger: '.process-steps',
-        start:   'top 80%',
-      },
-    });
+  // ── CONTACT ───────────────────────────────────────────────────
+  gsap.from('#contact .section-header', {
+    opacity: 0, y: 60, duration: 0.8, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#contact',
+      start: 'top 80%',
+    }
+  });
 
-    /* Feature strip fades up after steps */
-    gsap.to('.process-features', {
-      opacity:  1,
-      y:        0,
-      duration: 0.6,
-      ease:     'power2.out',
-      scrollTrigger: {
-        trigger: '.process-features',
-        start:   'top 85%',
-      },
-    });
-  }
+  gsap.from('.form-left', {
+    opacity: 0, x: -50, duration: 0.9, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#contact .forms-grid',
+      start: 'top 80%',
+    }
+  });
 
-  /* -----------------------------------------------------------
-     7. ABOUT SECTION — columns + stats count-up + mission strip
-  ----------------------------------------------------------- */
-  if (document.querySelector('.about-section')) {
-    /* Left + right columns stagger in */
-    gsap.to(['.about-left', '.about-right'], {
-      opacity:  1,
-      y:        0,
-      duration: 0.75,
-      ease:     'power3.out',
-      stagger:  0.15,
-      scrollTrigger: {
-        trigger: '.about-cols',
-        start:   'top 82%',
-      },
-    });
+  gsap.from('.form-right', {
+    opacity: 0, x: 50, duration: 0.9, ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#contact .forms-grid',
+      start: 'top 80%',
+    }
+  });
 
-    /* Stats pop in with stagger */
-    gsap.from('.stat-item', {
-      opacity:  0,
-      y:        16,
-      duration: 0.55,
-      ease:     'back.out(1.4)',
-      stagger:  0.12,
-      scrollTrigger: {
-        trigger: '.stats-row',
-        start:   'top 88%',
-      },
+  // ── MARQUEE PAUSE ON HOVER ────────────────────────────────────
+  const marqueeTrack = document.querySelector('.marquee-track');
+  if (marqueeTrack) {
+    marqueeTrack.addEventListener('mouseenter', () => {
+      marqueeTrack.style.animationPlayState = 'paused';
     });
-
-    /* Mission strip */
-    gsap.to('.about-mission', {
-      opacity:  1,
-      y:        0,
-      duration: 0.65,
-      ease:     'power2.out',
-      scrollTrigger: {
-        trigger: '.about-mission',
-        start:   'top 85%',
-      },
+    marqueeTrack.addEventListener('mouseleave', () => {
+      marqueeTrack.style.animationPlayState = 'running';
     });
   }
 
-  /* -----------------------------------------------------------
-     8. DOORS SECTION — cinematic scroll entrance
-     Elements animate in sequence: headline → subline → types → badge → cta
-  ----------------------------------------------------------- */
-  if (document.querySelector('.doors-section')) {
-    const doorsTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.doors-section',
-        start:   'top 75%',
-      },
-    });
+  // ── STAT COUNT FOR 1000 ───────────────────────────────────────
+  // Add data-count attribute to the 1000+ stat number
+  const statNumbers = document.querySelectorAll('.stat-number');
+  statNumbers.forEach(el => {
+    if (el.textContent.includes('1,000') ||
+        el.textContent.includes('1000')) {
+      el.setAttribute('data-count', '1000');
+    }
+  });
 
-    doorsTl
-      /* Labels fade in first, quickly */
-      .from('.doors-labels', {
-        opacity:  0,
-        x:        -24,
-        duration: 0.45,
-        ease:     'power2.out',
-      })
-      /* Headline slides up dramatically */
-      .to('.doors-heading', {
-        opacity:   1,
-        y:         0,
-        duration:  0.85,
-        ease:      'power3.out',
-      }, '-=0.1')
-      /* Subline follows 0.2s behind */
-      .to('.doors-subline', {
-        opacity:   1,
-        y:         0,
-        duration:  0.7,
-        ease:      'power3.out',
-      }, '-=0.65')
-      /* Door types strip */
-      .to('.doors-types', {
-        opacity:   1,
-        y:         0,
-        duration:  0.55,
-        ease:      'power2.out',
-      }, '-=0.45')
-      /* Badge pops in */
-      .to('.doors-badge', {
-        opacity:   1,
-        y:         0,
-        duration:  0.4,
-        ease:      'back.out(1.4)',
-      }, '-=0.2')
-      /* CTA last */
-      .to('.doors-cta', {
-        opacity:   1,
-        y:         0,
-        duration:  0.4,
-        ease:      'power2.out',
-      }, '-=0.1');
-  }
-
-  /* -----------------------------------------------------------
-     9. CONTACT DETAILS — slide up with stagger
-  ----------------------------------------------------------- */
-  if (document.querySelector('.contact-detail')) {
-    gsap.from('.contact-detail', {
-      opacity:  0,
-      y:        20,
-      duration: 0.55,
-      ease:     'power2.out',
-      stagger:  0.1,
-      scrollTrigger: {
-        trigger: '.contact-details',
-        start:   'top 85%',
-      },
-    });
-  }
-
-  /* -----------------------------------------------------------
-     10. SAMPLE SECTION — sequential fade-ups
-     Initial states are set in CSS on each element.
-  ----------------------------------------------------------- */
-  if (document.querySelector('.sample-section')) {
-    const sampleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.sample-section',
-        start:   'top 78%',
-      },
-    });
-
-    sampleTl
-      .to('.sample-accent', {
-        opacity:   1,
-        scaleY:    1,
-        duration:  0.5,
-        ease:      'power2.out',
-      })
-      .to('.sample-badge', {
-        opacity:   1,
-        y:         0,
-        duration:  0.45,
-        ease:      'power2.out',
-      }, '-=0.1')
-      .to('.sample-heading', {
-        opacity:   1,
-        y:         0,
-        duration:  0.7,
-        ease:      'power3.out',
-      }, '-=0.1')
-      .to('.sample-body', {
-        opacity:   1,
-        y:         0,
-        duration:  0.6,
-        ease:      'power2.out',
-      }, '-=0.2')
-      .to('.sample-btn', {
-        opacity:   1,
-        y:         0,
-        duration:  0.5,
-        ease:      'power2.out',
-      }, '-=0.15')
-      .to('.sample-fine', {
-        opacity:   1,
-        duration:  0.4,
-        ease:      'power1.out',
-      }, '-=0.1');
-  }
-
-  /* -----------------------------------------------------------
-     11. CONTACT SECTION — header, forms, card
-  ----------------------------------------------------------- */
-  if (document.querySelector('.contact-section')) {
-    /* Header fades up */
-    gsap.to('.contact-header', {
-      opacity:  1,
-      y:        0,
-      duration: 0.7,
-      ease:     'power3.out',
-      scrollTrigger: { trigger: '.contact-header', start: 'top 85%' },
-    });
-
-    /* Both form wrappers stagger in */
-    gsap.to('.contact-form-wrap', {
-      opacity:  1,
-      y:        0,
-      duration: 0.7,
-      ease:     'power3.out',
-      stagger:  0.15,
-      scrollTrigger: { trigger: '.contact-forms', start: 'top 82%' },
-    });
-
-    /* Direct contact card */
-    gsap.to('.contact-card', {
-      opacity:  1,
-      y:        0,
-      duration: 0.6,
-      ease:     'power2.out',
-      scrollTrigger: { trigger: '.contact-card', start: 'top 88%' },
-    });
-  }
 });
