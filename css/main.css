@@ -346,21 +346,21 @@ nav,
 
 /* Mobile menu drawer */
 .mobile-menu {
-  position: absolute;
-  top: var(--nav-height);
-  left:  0;
-  right: 0;
-  background-color: rgba(42, 42, 43, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height var(--duration-slow) var(--ease-out-expo);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #111111;
+  z-index: 99998;
+  padding: 100px 40px 40px;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid #222;
 }
 
 .mobile-menu.open {
-  max-height: 500px;
+  right: 0;
 }
 
 .mobile-menu__links {
