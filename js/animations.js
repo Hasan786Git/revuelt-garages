@@ -208,17 +208,5 @@ window.addEventListener('load', function() {
     }
   );
 
-  // Refresh ScrollTrigger after everything loads
-  ScrollTrigger.refresh();
-
-  // Fix stacking context after GSAP refresh
-  document.querySelectorAll(
-    '.parts-card, .process-step, .process-feature, ' +
-    '.about-left, .about-right, .about-mission, ' +
-    '.contact-form-wrap, .sample-inner, ' +
-    '.doors-heading, .doors-subline'
-  ).forEach(el => {
-    el.style.willChange = 'auto';
-  });
 
 });
