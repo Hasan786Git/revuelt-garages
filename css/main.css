@@ -188,9 +188,7 @@ textarea {
 }
 
 
-/* -------------------------------------------------------------
-   3. NAVIGATION
-------------------------------------------------------------- */
+/* ── NAV ──────────────────────────────────────────────── */
 nav,
 .nav {
   position: fixed;
@@ -199,19 +197,10 @@ nav,
   right: 0;
   width: 100%;
   z-index: 9999;
-  height: 72px;
-  background: rgba(15, 15, 15, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3),
-              0 1px 0 rgba(254, 110, 2, 0.15);
-}
-
-nav.scrolled,
-.nav.scrolled {
-  background: rgba(10, 10, 10, 0.85);
-  border-bottom: 1px solid rgba(254, 110, 2, 0.15);
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav__inner {
@@ -219,17 +208,18 @@ nav.scrolled,
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: 72px;
   padding: 0 6%;
+  max-width: 100%;
 }
 
-/* Logo */
 .nav__logo img {
   height: 36px;
   width: auto;
+  display: block;
 }
 
-/* Nav links */
 .nav__links {
   display: flex;
   flex-direction: row;
@@ -240,8 +230,6 @@ nav.scrolled,
   padding: 0;
   position: static;
   background: transparent;
-  height: auto;
-  width: auto;
 }
 
 .nav__link {
@@ -251,9 +239,8 @@ nav.scrolled,
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: color 0.2s ease;
   white-space: nowrap;
-  position: relative;
+  transition: color 0.2s ease;
 }
 
 .nav__link:hover,
@@ -261,41 +248,21 @@ nav.scrolled,
   color: #fe6e02;
 }
 
-.nav__link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #fe6e02;
-  transition: width 0.3s ease;
-}
-
-.nav__link:hover::after,
-.nav__link.active::after {
-  width: 100%;
-}
-
-/* FREE SAMPLE KIT button */
 .nav__cta {
   font-size: 11px;
   font-weight: 700;
-  color: white;
+  color: #ffffff;
   background: #fe6e02;
   padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
   white-space: nowrap;
-  border: none;
-  box-shadow: 0 0 20px rgba(254, 110, 2, 0.3);
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .nav__cta:hover {
   background: #ff8c3a;
-  box-shadow: 0 0 30px rgba(254, 110, 2, 0.5);
 }
 
 /* Hamburger button */
