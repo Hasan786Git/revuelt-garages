@@ -473,20 +473,17 @@ textarea {
   background-color: var(--color-dark);
 }
 
-#home video {
-  display: none; /* fallback — overridden by #hero-video below */
-}
-
-#hero-video {
+mux-player {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;    /* 16:9: height tracks viewport width  */
-  min-height: 100vh;
-  min-width: 177.78vh; /* 16:9: width tracks viewport height  */
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
+  --controls: none;
+  --media-object-fit: cover;
+  --media-object-position: center;
 }
 
 #home .hero-overlay {

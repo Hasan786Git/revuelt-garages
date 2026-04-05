@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
+  <!-- Mux Player web component -->
+  <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
+
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
@@ -79,11 +82,16 @@
   ============================================================ -->
   <section id="home" class="section section--hero">
 
-    <!-- Video background -->
-    <video id="hero-video" autoplay muted loop playsinline>
-      <source src="https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00.m3u8" type="application/x-mpegURL">
-      <source src="https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00/high.mp4" type="video/mp4">
-    </video>
+    <!-- Mux Player web component — handles HLS + fallback automatically -->
+    <mux-player
+      id="hero-video"
+      playback-id="5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00"
+      autoplay="muted"
+      loop
+      muted
+      playsinline
+      style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"
+    ></mux-player>
     <!-- Dark overlay sits on top of video -->
     <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -407,8 +415,6 @@
     </div>
   </footer>
 
-  <!-- HLS.js — adaptive streaming for non-Safari browsers -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
