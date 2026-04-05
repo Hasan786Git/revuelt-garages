@@ -116,6 +116,24 @@ textarea {
 }
 
 /* -------------------------------------------------------------
+   1b. NOISE OVERLAY
+------------------------------------------------------------- */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+
+/* -------------------------------------------------------------
    2. CUSTOM CURSOR
 ------------------------------------------------------------- */
 .cursor-dot,
@@ -185,6 +203,8 @@ textarea {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 0 rgba(254, 110, 2, 0.3),
+              0 4px 20px rgba(0, 0, 0, 0.5);
   transition: background-color var(--duration-med) var(--ease-smooth),
               box-shadow var(--duration-med) var(--ease-smooth);
 }
@@ -596,6 +616,14 @@ mux-player {
 }
 
 
+@media (min-width: 1200px) {
+  .hero__heading {
+    font-size: 110px;
+    line-height: 0.95;
+  }
+}
+
+
 /* -------------------------------------------------------------
    7. PARTS SECTION — // 02 PIEZAS
 ------------------------------------------------------------- */
@@ -674,7 +702,9 @@ mux-player {
 .parts-card:hover {
   background-color: #1e1e1e;
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(254, 110, 2, 0.15);
+  box-shadow: 0 0 0 1px rgba(254, 110, 2, 0.3),
+              0 20px 60px rgba(254, 110, 2, 0.1),
+              0 0 80px rgba(254, 110, 2, 0.05);
 }
 
 .parts-card__body {
@@ -948,6 +978,7 @@ mux-player {
   line-height: 1.0;
   color: var(--color-text);
   margin: 0 0 8px;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.1);
 }
 
 /* Subline — orange, large */
@@ -959,6 +990,7 @@ mux-player {
   line-height: 1.1;
   color: var(--color-orange);
   margin: 0 0 32px;
+  text-shadow: 0 0 40px rgba(254, 110, 2, 0.4);
 }
 
 /* Door types strip */
@@ -1083,12 +1115,12 @@ mux-player {
 /* Large number */
 .process-step__num {
   display: block;
-  font-size: 80px;
+  font-size: 100px;
   font-weight: 900;
   color: var(--color-orange);
   line-height: 1;
   margin-bottom: 0;
-  text-shadow: 0 0 40px rgba(254, 110, 2, 0.4);
+  text-shadow: 0 0 60px rgba(254, 110, 2, 0.3);
 }
 
 /* Step title */
@@ -1229,6 +1261,7 @@ mux-player {
   font-weight: 800;
   color: #f2f2f2;
   line-height: 1;
+  text-shadow: 0 0 30px rgba(254, 110, 2, 0.3);
 }
 
 .stat-label {
@@ -1640,11 +1673,12 @@ a.contact-card__value:hover {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #fff;
+  color: #aaaaaa;
 }
 
 .marquee-track .dot {
-  opacity: 0.6;
+  color: #fe6e02;
+  text-shadow: 0 0 10px rgba(254, 110, 2, 0.6);
 }
 
 @keyframes marquee-scroll {
