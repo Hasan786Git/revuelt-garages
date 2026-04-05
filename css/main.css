@@ -502,11 +502,16 @@ mux-player {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 0;
   --controls: none;
   --media-object-fit: cover;
   --media-object-position: center;
+}
+
+mux-player::part(media) {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 #home .hero-overlay {
