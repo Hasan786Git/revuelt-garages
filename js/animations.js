@@ -334,15 +334,35 @@ window.addEventListener('load', function initAnimations() {
   }
 
   /* -----------------------------------------------------------
-     11. CONTACT FORM — fade up as a unit
+     11. CONTACT SECTION — header, forms, card
   ----------------------------------------------------------- */
-  if (document.querySelector('.contact-form')) {
-    gsap.from('.contact-form', {
-      opacity:  0,
-      y:        32,
-      duration: 0.75,
+  if (document.querySelector('.contact-section')) {
+    /* Header fades up */
+    gsap.to('.contact-header', {
+      opacity:  1,
+      y:        0,
+      duration: 0.7,
       ease:     'power3.out',
-      scrollTrigger: { trigger: '.contact-form', start: 'top 85%' },
+      scrollTrigger: { trigger: '.contact-header', start: 'top 85%' },
+    });
+
+    /* Both form wrappers stagger in */
+    gsap.to('.contact-form-wrap', {
+      opacity:  1,
+      y:        0,
+      duration: 0.7,
+      ease:     'power3.out',
+      stagger:  0.15,
+      scrollTrigger: { trigger: '.contact-forms', start: 'top 82%' },
+    });
+
+    /* Direct contact card */
+    gsap.to('.contact-card', {
+      opacity:  1,
+      y:        0,
+      duration: 0.6,
+      ease:     'power2.out',
+      scrollTrigger: { trigger: '.contact-card', start: 'top 88%' },
     });
   }
 });

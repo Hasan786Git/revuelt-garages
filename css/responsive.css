@@ -75,10 +75,27 @@
   font-size: 56px;
 }
 
-/* Stack contact split */
-.contact-split {
+/* Stack contact forms on mobile */
+.contact-forms {
   grid-template-columns: 1fr;
   gap: 48px;
+}
+
+/* Remove the alignment nudge on mobile — no badge offset needed */
+.cform-title--no-badge {
+  margin-top: 0;
+}
+
+/* Contact card stacks on mobile */
+.contact-card {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-card__divider {
+  width: 48px;
+  height: 1px;
 }
 
 /* Process — 1 column stack on mobile */
@@ -250,10 +267,24 @@
     font-size: 80px;
   }
 
-  /* Contact side-by-side */
-  .contact-split {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 64px;
+  /* Contact forms side by side at tablet */
+  .contact-forms {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .cform-title--no-badge {
+    margin-top: 37px;
+  }
+
+  .contact-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .contact-card__divider {
+    width: 1px;
+    height: 48px;
   }
 
   /* Footer horizontal */
@@ -278,7 +309,7 @@
     gap: 80px;
   }
 
-  .contact-split {
+  .contact-forms {
     gap: 80px;
   }
 }

@@ -430,57 +430,109 @@
        SECTION 07 — CONTACT
        ES: Contacto
   ============================================================ -->
-  <section id="contact" class="section">
-    <div class="section__inner">
+  <section id="contact" class="contact-section">
 
-      <span class="section__label">// 07 &nbsp; CONTACTO</span>
-      <h2 class="section__heading">Get In<br /><span class="text--orange">Touch.</span></h2>
+    <!-- Section header -->
+    <div class="contact-header">
+      <div class="contact-labels">
+        <span class="contact-num">// 07</span>
+        <span class="contact-es">Contacto</span>
+      </div>
+      <h2 class="contact-heading">Get In Touch.</h2>
+      <p class="contact-sub">Trade accounts and pricing inquiries only. We respond same-day.</p>
+    </div>
 
-      <div class="contact-split">
+    <!-- Two forms side by side -->
+    <div class="contact-forms">
 
-        <div class="contact-info">
-          <p class="section__body">
-            Ready to open a trade account or have a quick question? Reach out — we keep response times short.
-          </p>
-          <ul class="contact-details" role="list">
-            <li class="contact-detail">
-              <span class="contact-detail__label">Phone</span>
-              <a href="tel:+19725550000" class="contact-detail__value">(972) 555-0000</a>
-            </li>
-            <li class="contact-detail">
-              <span class="contact-detail__label">Email</span>
-              <a href="mailto:trade@revueltgarages.com" class="contact-detail__value">trade@revueltgarages.com</a>
-            </li>
-            <li class="contact-detail">
-              <span class="contact-detail__label">Location</span>
-              <span class="contact-detail__value">Dallas-Fort Worth, TX</span>
-            </li>
-            <li class="contact-detail">
-              <span class="contact-detail__label">Hours</span>
-              <span class="contact-detail__value">Mon–Fri, 7AM–5PM CST</span>
-            </li>
-          </ul>
-        </div>
-
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="contactName">Name</label>
-            <input type="text" id="contactName" name="name" placeholder="Your full name" autocomplete="name" required />
-          </div>
-          <div class="form-group">
-            <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" name="email" placeholder="you@yourcompany.com" autocomplete="email" required />
-          </div>
-          <div class="form-group">
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about your needs..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn--orange">Send Message</button>
+      <!-- LEFT: Trade Account Application -->
+      <div class="contact-form-wrap">
+        <span class="cform-badge">Contractors Only</span>
+        <h3 class="cform-title">Open Your Trade Account.</h3>
+        <form class="cform" id="tradeForm" action="#" method="POST" novalidate>
+          <input type="text"  name="full_name"     placeholder="Full Name"      autocomplete="name"         required />
+          <input type="text"  name="business_name" placeholder="Business Name"  autocomplete="organization" required />
+          <input type="tel"   name="phone"         placeholder="Phone Number"   autocomplete="tel"          required />
+          <input type="email" name="email"         placeholder="Email Address"  autocomplete="email"        required />
+          <select name="city" required>
+            <option value="" disabled selected>City / Area</option>
+            <option>Irving</option>
+            <option>Arlington</option>
+            <option>Plano</option>
+            <option>Garland</option>
+            <option>McKinney</option>
+            <option>Frisco</option>
+            <option>Mansfield</option>
+            <option>Burleson</option>
+            <option>Grand Prairie</option>
+            <option>Rockwall</option>
+            <option>Allen</option>
+            <option>Mesquite</option>
+            <option>Other</option>
+          </select>
+          <select name="team_size" required>
+            <option value="" disabled selected>How many techs?</option>
+            <option>1</option>
+            <option>2–3</option>
+            <option>4–5</option>
+            <option>5+</option>
+          </select>
+          <!-- Checkboxes: most-ordered parts -->
+          <fieldset class="cform-checkgroup">
+            <legend>What do you order most?</legend>
+            <label class="cform-check"><input type="checkbox" name="parts" value="springs" /> Springs</label>
+            <label class="cform-check"><input type="checkbox" name="parts" value="rollers" /> Rollers</label>
+            <label class="cform-check"><input type="checkbox" name="parts" value="cables"  /> Cables</label>
+            <label class="cform-check"><input type="checkbox" name="parts" value="hinges"  /> Hinges</label>
+            <label class="cform-check"><input type="checkbox" name="parts" value="other"   /> Other</label>
+          </fieldset>
+          <label class="cform-check cform-check--standalone">
+            <input type="checkbox" name="sample_kit" value="yes" checked />
+            Send me a FREE sample kit
+          </label>
+          <button type="submit" class="cform-submit">Submit Application</button>
         </form>
+      </div>
 
+      <!-- RIGHT: Quote Request -->
+      <div class="contact-form-wrap">
+        <h3 class="cform-title cform-title--no-badge">Get Parts &amp; Pricing.</h3>
+        <form class="cform" id="quoteForm" action="#" method="POST" novalidate>
+          <input type="text"  name="name"        placeholder="Name"              autocomplete="name"  required />
+          <input type="text"  name="phone_email" placeholder="Phone or Email"                         required />
+          <textarea           name="needs"       placeholder="What do you need?" rows="4"             required></textarea>
+          <select name="timeline" required>
+            <option value="" disabled selected>How soon?</option>
+            <option>ASAP</option>
+            <option>This Week</option>
+            <option>Just Exploring</option>
+          </select>
+          <label class="cform-check cform-check--standalone">
+            <input type="checkbox" name="sample_kit" value="yes" />
+            Send me a free sample kit
+          </label>
+          <button type="submit" class="cform-submit">Send Request</button>
+        </form>
       </div>
 
     </div>
+
+    <!-- Direct contact card -->
+    <div class="contact-card">
+      <div class="contact-card__item">
+        <span class="contact-card__label">Phone</span>
+        <a href="tel:+19725550000" class="contact-card__value">[Your Phone Number]</a>
+      </div>
+      <div class="contact-card__divider" aria-hidden="true"></div>
+      <div class="contact-card__item">
+        <span class="contact-card__label">Email</span>
+        <a href="mailto:trade@revueltgarages.com" class="contact-card__value">[Your Email]</a>
+      </div>
+      <p class="contact-card__note">
+        Serving DFW and surrounding suburbs &nbsp;·&nbsp; Irving, TX
+      </p>
+    </div>
+
   </section>
 
   <!-- ============================================================
