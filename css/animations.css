@@ -19,8 +19,9 @@
 /* ── FADE UP BASE STATE ─────────────────────── */
 .fade-up {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(80px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up.visible {
@@ -30,17 +31,18 @@
 
 /* ── STAGGER DELAYS ─────────────────────────── */
 .fade-up:nth-child(1) { transition-delay: 0.0s; }
-.fade-up:nth-child(2) { transition-delay: 0.1s; }
-.fade-up:nth-child(3) { transition-delay: 0.2s; }
-.fade-up:nth-child(4) { transition-delay: 0.3s; }
-.fade-up:nth-child(5) { transition-delay: 0.4s; }
-.fade-up:nth-child(6) { transition-delay: 0.5s; }
+.fade-up:nth-child(2) { transition-delay: 0.12s; }
+.fade-up:nth-child(3) { transition-delay: 0.24s; }
+.fade-up:nth-child(4) { transition-delay: 0.36s; }
+.fade-up:nth-child(5) { transition-delay: 0.48s; }
+.fade-up:nth-child(6) { transition-delay: 0.60s; }
 
 /* ── FADE LEFT / RIGHT ──────────────────────── */
 .fade-left {
   opacity: 0;
-  transform: translateX(-60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(-80px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-left.visible {
@@ -50,8 +52,9 @@
 
 .fade-right {
   opacity: 0;
-  transform: translateX(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(80px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-right.visible {
