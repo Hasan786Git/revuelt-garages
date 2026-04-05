@@ -13,7 +13,7 @@ window.addEventListener('load', function initAnimations() {
     console.warn('Revuelt: GSAP not loaded — skipping animations.');
     // Ensure all animated elements are visible even without GSAP
     document.querySelectorAll(
-      '.process-step, .parts-card, .about-stat__num, .fade-up, .stagger-children > *, .parts-card'
+      '.process-step, .process-features, .parts-card, .about-stat__num, .fade-up, .stagger-children > *'
     ).forEach(el => {
       el.style.opacity  = '1';
       el.style.transform = 'none';
@@ -128,18 +128,40 @@ window.addEventListener('load', function initAnimations() {
   }
 
   /* -----------------------------------------------------------
-     6. PROCESS STEPS — staggered slide-in from left
+     6. PROCESS SECTION — steps stagger + feature strip
   ----------------------------------------------------------- */
-  if (document.querySelector('.process-step')) {
+  if (document.querySelector('.process-section')) {
+    /* Header */
+    gsap.from('.process-header', {
+      opacity:  0,
+      y:        32,
+      duration: 0.7,
+      ease:     'power3.out',
+      scrollTrigger: { trigger: '.process-header', start: 'top 85%' },
+    });
+
+    /* Steps — fade up with 0.2s stagger between each */
     gsap.to('.process-step', {
-      opacity:   1,
-      x:         0,
-      duration:  0.65,
-      ease:      'power3.out',
-      stagger:   0.15,
+      opacity:  1,
+      y:        0,
+      duration: 0.65,
+      ease:     'power3.out',
+      stagger:  0.2,
       scrollTrigger: {
         trigger: '.process-steps',
         start:   'top 80%',
+      },
+    });
+
+    /* Feature strip fades up after steps */
+    gsap.to('.process-features', {
+      opacity:  1,
+      y:        0,
+      duration: 0.6,
+      ease:     'power2.out',
+      scrollTrigger: {
+        trigger: '.process-features',
+        start:   'top 85%',
       },
     });
   }

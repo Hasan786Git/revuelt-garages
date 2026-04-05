@@ -63,10 +63,39 @@
   gap: 48px;
 }
 
-/* Tighten process step gap on mobile */
+/* Process — 1 column stack on mobile */
+.process-steps {
+  grid-template-columns: 1fr;
+}
+
 .process-step {
-  gap: 20px;
-  padding: 28px 0;
+  padding: 32px 0 0;
+}
+
+.process-step + .process-step {
+  padding-left: 0;
+  border-left: none;
+  margin-top: 40px;
+}
+
+/* Feature strip — 1 column mobile */
+.process-features {
+  grid-template-columns: 1fr;
+  margin: 0 -5vw;
+  padding: 40px 5vw;
+  gap: 28px;
+}
+
+.process-feature {
+  border-left: none;
+  padding-left: 0;
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+}
+
+.process-feature:first-child {
+  border-top: none;
+  padding-top: 0;
 }
 
 /* Footer stacks */
@@ -136,6 +165,41 @@
   .parts-cta {
     flex-direction: row;
     align-items: center;
+  }
+
+  /* Process — 3 columns restored at tablet */
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process-step {
+    padding: 40px 40px 40px 0;
+  }
+
+  .process-step + .process-step {
+    padding-left: 40px;
+    border-left: 1px solid var(--color-border);
+    margin-top: 0;
+  }
+
+  /* Feature strip — 3 columns restored */
+  .process-features {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 -8%;
+    padding: 48px 8%;
+    gap: 0;
+  }
+
+  .process-feature {
+    border-top: none;
+    padding-top: 0;
+    border-left: 1px solid var(--color-border);
+    padding-left: 32px;
+  }
+
+  .process-feature:first-child {
+    border-left: none;
+    padding-left: 0;
   }
 
   /* Restore about layout */

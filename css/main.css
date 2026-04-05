@@ -1023,55 +1023,149 @@ mux-player {
 
 
 /* -------------------------------------------------------------
-   10. PROCESS STEPS
+   10. PROCESS SECTION — // 05 PROCESO
 ------------------------------------------------------------- */
-.process-steps {
-  margin-top: 64px;
+.process-section {
+  background-color: var(--color-dark);
+  padding: 120px 8%;
+}
+
+/* Header */
+.process-header {
+  margin-bottom: 72px;
+}
+
+.process-labels {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.process-step {
-  display: flex;
-  gap: 36px;
-  align-items: flex-start;
-  padding: 36px 0;
-  border-bottom: 1px solid var(--color-border);
-  transition: padding-left var(--duration-med) var(--ease-smooth);
-}
-
-.process-step:first-child {
-  border-top: 1px solid var(--color-border);
-}
-
-.process-step:hover {
-  padding-left: 12px;
-}
-
-.process-step__num {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.process-num {
+  font-size: 12px;
+  font-weight: 600;
   color: var(--color-orange);
-  min-width: 36px;
-  padding-top: 4px;
+  letter-spacing: 0.2em;
 }
 
+.process-es {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.process-heading {
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.process-sub {
+  font-size: 18px;
+  color: var(--color-mid-gray);
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+/* 3-column steps grid */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 80px;
+}
+
+/* Individual step */
+.process-step {
+  padding: 40px 40px 40px 0;
+  border-top: 2px solid var(--color-orange);
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Divider between steps on desktop */
+.process-step + .process-step {
+  padding-left: 40px;
+  border-left: 1px solid var(--color-border);
+}
+
+/* Large number */
+.process-step__num {
+  display: block;
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--color-orange);
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+/* Step title */
 .process-step__title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 8px;
+  letter-spacing: 0.04em;
   color: var(--color-text);
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
+/* Step description */
 .process-step__desc {
   font-size: 15px;
   color: var(--color-mid-gray);
   line-height: 1.7;
-  max-width: 560px;
+  margin-top: 12px;
+}
+
+/* Feature strip */
+.process-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--color-charcoal);
+  padding: 48px 8%;
+  /* Pull to full section width — compensate for section padding */
+  margin: 0 -8%;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.process-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 32px;
+  border-left: 1px solid var(--color-border);
+}
+
+.process-feature:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.process-feature__name {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+}
+
+.process-feature__desc {
+  display: block;
+  font-size: 14px;
+  color: var(--color-mid-gray);
+  line-height: 1.55;
 }
 
 
