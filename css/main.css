@@ -555,29 +555,27 @@ mux-player {
 }
 
 /* Scroll indicator */
-.hero__scroll {
+.scroll-indicator {
   position: absolute;
   bottom: 40px;
-  left: var(--section-pad-x);
+  left: 8%;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 12px;
-  opacity: 0.45;
+  color: #888888;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-.hero__scroll-line {
+.scroll-indicator::before {
+  content: '';
   display: block;
   width: 40px;
   height: 1px;
-  background-color: var(--color-text);
-}
-
-.hero__scroll-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text);
+  background: #888888;
 }
 
 
