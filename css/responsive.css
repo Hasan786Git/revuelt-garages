@@ -45,16 +45,34 @@
   grid-template-columns: 1fr;
 }
 
-/* Stack about split */
-.about-split {
+/* Stack about columns on mobile */
+.about-cols {
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 48px;
 }
 
-.about-split__visual {
-  order: -1; /* image above text on mobile */
-  max-height: 280px;
-  aspect-ratio: unset;
+/* Stats wrap on mobile */
+.about-stats {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.about-stat {
+  padding: 0;
+}
+
+.about-stat-divider {
+  display: none;
+}
+
+/* Mission strip full width on mobile */
+.about-mission {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-mission__quote {
+  font-size: 56px;
 }
 
 /* Stack contact split */
@@ -118,9 +136,7 @@
     flex-wrap: nowrap;
   }
 
-  .about-split__visual {
-    max-height: 340px;
-  }
+  /* about-split__visual removed — section rebuilt */
 }
 
 
@@ -202,16 +218,36 @@
     padding-left: 0;
   }
 
-  /* Restore about layout */
-  .about-split {
-    grid-template-columns: 1fr 1fr;
+  /* Restore about columns at tablet */
+  .about-cols {
+    grid-template-columns: 55fr 45fr;
     gap: 64px;
   }
 
-  .about-split__visual {
-    order: 0;
-    max-height: unset;
-    aspect-ratio: 1 / 1;
+  .about-stats {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .about-stat {
+    padding: 0 32px;
+  }
+
+  .about-stat:first-child {
+    padding-left: 0;
+  }
+
+  .about-stat-divider {
+    display: block;
+  }
+
+  .about-mission {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .about-mission__quote {
+    font-size: 80px;
   }
 
   /* Contact side-by-side */
@@ -238,7 +274,7 @@
     padding: 40px 0;
   }
 
-  .about-split {
+  .about-cols {
     gap: 80px;
   }
 

@@ -13,7 +13,7 @@ window.addEventListener('load', function initAnimations() {
     console.warn('Revuelt: GSAP not loaded — skipping animations.');
     // Ensure all animated elements are visible even without GSAP
     document.querySelectorAll(
-      '.process-step, .process-features, .parts-card, .about-stat__num, .fade-up, .stagger-children > *'
+      '.process-step, .process-features, .parts-card, .about-left, .about-right, .about-stat, .about-mission, .fade-up, .stagger-children > *'
     ).forEach(el => {
       el.style.opacity  = '1';
       el.style.transform = 'none';
@@ -167,17 +167,64 @@ window.addEventListener('load', function initAnimations() {
   }
 
   /* -----------------------------------------------------------
-     7. ABOUT STATS — pop in with slight scale
+     7. ABOUT SECTION — columns + stats count-up + mission strip
   ----------------------------------------------------------- */
-  if (document.querySelector('.about-stat__num')) {
-    gsap.to('.about-stat__num', {
+  if (document.querySelector('.about-section')) {
+    /* Left + right columns stagger in */
+    gsap.to(['.about-left', '.about-right'], {
       opacity:  1,
       y:        0,
-      duration: 0.6,
+      duration: 0.75,
+      ease:     'power3.out',
+      stagger:  0.15,
+      scrollTrigger: {
+        trigger: '.about-cols',
+        start:   'top 82%',
+      },
+    });
+
+    /* Stats pop in with stagger */
+    gsap.to('.about-stat', {
+      opacity:  1,
+      y:        0,
+      duration: 0.55,
       ease:     'back.out(1.4)',
-      stagger:  0.1,
+      stagger:  0.12,
       scrollTrigger: {
         trigger: '.about-stats',
+        start:   'top 88%',
+      },
+    });
+
+    /* Count-up for the 1,000+ stat */
+    const countEl = document.querySelector('[data-target="1000"]');
+    if (countEl) {
+      const suffix = countEl.dataset.suffix || '';
+      ScrollTrigger.create({
+        trigger: countEl,
+        start: 'top 88%',
+        once: true,
+        onEnter: () => {
+          gsap.to({ val: 0 }, {
+            val: 1000,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: function () {
+              countEl.textContent = Math.round(this.targets()[0].val).toLocaleString() + suffix;
+            },
+          });
+        },
+      });
+    }
+
+    /* Mission strip */
+    gsap.to('.about-mission', {
+      opacity:  1,
+      y:        0,
+      duration: 0.65,
+      ease:     'power2.out',
+      scrollTrigger: {
+        trigger: '.about-mission',
         start:   'top 85%',
       },
     });
