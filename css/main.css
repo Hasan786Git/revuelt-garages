@@ -201,9 +201,9 @@ nav.nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 6%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid rgba(254, 110, 2, 0.2);
   z-index: 99999;
 }
