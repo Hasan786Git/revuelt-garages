@@ -226,10 +226,37 @@ if (heroVideo) {
 
 
 /* -------------------------------------------------------------
-   5. FOOTER YEAR
-   Auto-updates the copyright year so it never goes stale.
+   5. FOOTER CLOCKS + YEAR
+   Live clocks for Dallas (CT) and Shenzhen (CST+8).
+   Ticks every second. Also keeps the copyright year current.
 ------------------------------------------------------------- */
-(function initFooterYear() {
-  const el = document.getElementById('footerYear');
-  if (el) el.textContent = new Date().getFullYear();
-})();
+function updateClocks() {
+  const now = new Date();
+
+  const dallas = now.toLocaleTimeString('en-US', {
+    timeZone:  'America/Chicago',
+    hour12:    false,
+    hour:      '2-digit',
+    minute:    '2-digit',
+    second:    '2-digit',
+  });
+
+  const shenzhen = now.toLocaleTimeString('en-US', {
+    timeZone:  'Asia/Shanghai',
+    hour12:    false,
+    hour:      '2-digit',
+    minute:    '2-digit',
+    second:    '2-digit',
+  });
+
+  const dallasEl   = document.getElementById('clock-dallas');
+  const shenzhenEl = document.getElementById('clock-shenzhen');
+  const yearEl     = document.getElementById('footer-year');
+
+  if (dallasEl)   dallasEl.textContent   = dallas;
+  if (shenzhenEl) shenzhenEl.textContent = shenzhen;
+  if (yearEl)     yearEl.textContent     = now.getFullYear();
+}
+
+updateClocks();
+setInterval(updateClocks, 1000);

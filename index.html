@@ -538,20 +538,89 @@
   <!-- ============================================================
        FOOTER
   ============================================================ -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-      <a href="#home" class="footer__logo" aria-label="Back to top">
-        <img src="assets/logo-white.png" alt="Revuelt Garages" width="120" height="auto" />
-      </a>
-      <p class="footer__copy">
-        &copy; <span id="footerYear"></span> Revuelt Garages. Trade accounts only.
-        Dallas-Fort Worth, TX.
-      </p>
-      <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="#parts"   class="footer__link">Parts</a>
-        <a href="#sample"  class="footer__link">Sample Kit</a>
-        <a href="#contact" class="footer__link">Contact</a>
+
+  <!-- MARQUEE TICKER -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>GARAGE DOOR PARTS &amp; COMPONENTS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>SPRINGS &amp; CABLES</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>ROLLERS &amp; HINGES</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>TRACKS &amp; HARDWARE</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>OPENERS &amp; MOTORS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>PANELS &amp; SECTIONS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>WEATHERSTRIPPING</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>TRADE ACCOUNTS ONLY</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>DALLAS-FORT WORTH, TX</span>
+      <span class="marquee-dot">&#9679;</span>
+      <!-- duplicate set for seamless loop -->
+      <span>GARAGE DOOR PARTS &amp; COMPONENTS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>SPRINGS &amp; CABLES</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>ROLLERS &amp; HINGES</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>TRACKS &amp; HARDWARE</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>OPENERS &amp; MOTORS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>PANELS &amp; SECTIONS</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>WEATHERSTRIPPING</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>TRADE ACCOUNTS ONLY</span>
+      <span class="marquee-dot">&#9679;</span>
+      <span>DALLAS-FORT WORTH, TX</span>
+      <span class="marquee-dot">&#9679;</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <!-- Left: logo + tagline -->
+      <div class="footer-left">
+        <a href="#home" class="footer-logo" aria-label="Back to top">
+          <img src="assets/logo-white.png" alt="Revuelt Garages" width="120" height="auto" />
+        </a>
+        <p class="footer-tagline">Wholesale garage door parts<br>for professional contractors.</p>
+      </div>
+
+      <!-- Center: nav links -->
+      <nav class="footer-center" aria-label="Footer navigation">
+        <a href="#parts"   class="footer-link">Parts</a>
+        <a href="#sample"  class="footer-link">Sample Kit</a>
+        <a href="#doors"   class="footer-link">Doors</a>
+        <a href="#process" class="footer-link">Process</a>
+        <a href="#about"   class="footer-link">About</a>
+        <a href="#contact" class="footer-link">Contact</a>
       </nav>
+
+      <!-- Right: live clocks -->
+      <div class="footer-right">
+        <div class="clock-item">
+          <span class="clock-city">Dallas, TX</span>
+          <span class="clock-time" id="clock-dallas">00:00:00</span>
+        </div>
+        <div class="clock-divider" aria-hidden="true"></div>
+        <div class="clock-item">
+          <span class="clock-city">Shenzhen, CN</span>
+          <span class="clock-time" id="clock-shenzhen">00:00:00</span>
+        </div>
+      </div>
+
+    </div><!-- /footer-main -->
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Revuelt Garages LLC. Trade accounts only. Dallas-Fort Worth, TX.</p>
     </div>
   </footer>
 
