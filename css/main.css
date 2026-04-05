@@ -189,10 +189,12 @@ textarea {
               box-shadow var(--duration-med) var(--ease-smooth);
 }
 
-/* Scrolled state — slightly darker */
+/* Scrolled state — fully black */
 .nav.scrolled {
-  background-color: rgba(42, 42, 43, 0.97);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
 }
 
 .nav__inner {
@@ -381,7 +383,8 @@ textarea {
 .btn--orange:hover {
   background-color: var(--color-orange-dim);
   border-color: var(--color-orange-dim);
-  box-shadow: 0 8px 24px rgba(254, 110, 2, 0.35);
+  box-shadow: 0 0 30px rgba(254, 110, 2, 0.5), 0 8px 24px rgba(254, 110, 2, 0.35);
+  transform: translateY(-2px);
 }
 
 /* Ghost / outlined */
@@ -496,6 +499,19 @@ mux-player {
   z-index: 1;
 }
 
+#home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
 #home .hero-content {
   position: relative;
   z-index: 2;
@@ -584,7 +600,8 @@ mux-player {
    7. PARTS SECTION — // 02 PIEZAS
 ------------------------------------------------------------- */
 .parts-section {
-  background-color: var(--color-dark);
+  background-color: #1a1a1b;
+  border-top: 2px solid #fe6e02;
   padding: 120px var(--section-pad-x);
 }
 
@@ -641,18 +658,23 @@ mux-player {
 
 /* Card */
 .parts-card {
-  background-color: #484849;
-  border-left: 3px solid var(--color-orange);
+  background-color: #111111;
+  border-left: 4px solid #fe6e02;
+  border-bottom: 1px solid #222;
   padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
-  transition: background-color var(--duration-med) var(--ease-smooth);
+  transition: background-color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .parts-card:hover {
-  background-color: #555556;
+  background-color: #1e1e1e;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(254, 110, 2, 0.15);
 }
 
 .parts-card__body {
@@ -713,9 +735,9 @@ mux-player {
 ------------------------------------------------------------- */
 .sample-section {
   position: relative;
-  background-color: var(--color-dark);
+  background: linear-gradient(135deg, #1a1a1b 0%, #2a1500 50%, #1a1a1b 100%);
+  border-top: 2px solid #fe6e02;
   padding: 140px var(--section-pad-x);
-  /* Subtle orange grain overlay via pseudo-element */
   overflow: hidden;
 }
 
@@ -872,8 +894,7 @@ mux-player {
   display: flex;
   align-items: center;
   overflow: hidden;
-  /* Fallback while video loads */
-  background-color: #0d0d0d;
+  background-color: #000000;
 }
 
 /* Heavy overlay — more opaque than hero */
@@ -990,7 +1011,8 @@ mux-player {
    10. PROCESS SECTION — // 05 PROCESO
 ------------------------------------------------------------- */
 .process-section {
-  background-color: var(--color-dark);
+  background-color: #1a1a1b;
+  border-top: 2px solid #fe6e02;
   padding: 120px 8%;
 }
 
@@ -1066,6 +1088,7 @@ mux-player {
   color: var(--color-orange);
   line-height: 1;
   margin-bottom: 0;
+  text-shadow: 0 0 40px rgba(254, 110, 2, 0.4);
 }
 
 /* Step title */
@@ -1131,7 +1154,7 @@ mux-player {
    11. ABOUT SECTION — // 06 NOSOTROS
 ------------------------------------------------------------- */
 .about-section {
-  background-color: var(--color-dark);
+  background-color: #2a2a2b;
   padding: 120px 8% 0;
 }
 
@@ -1288,7 +1311,8 @@ mux-player {
    12. CONTACT SECTION — // 07 CONTACTO
 ------------------------------------------------------------- */
 .contact-section {
-  background-color: var(--color-dark);
+  background-color: #1a1a1b;
+  border-top: 2px solid #fe6e02;
   padding: 120px 8%;
 }
 
@@ -1639,8 +1663,8 @@ a.contact-card__value:hover {
    15. FOOTER
 ------------------------------------------------------------- */
 .site-footer {
-  background-color: #1a1a1b;
-  border-top: 1px solid var(--color-border);
+  background-color: #111111;
+  border-top: 2px solid #fe6e02;
 }
 
 .footer-main {
