@@ -1,28 +1,13 @@
 /* =============================================================
    REVUELT GARAGES — animations.css
-   GSAP-driven animation initial states + CSS-only transitions.
-   GSAP ScrollTrigger will override these as elements enter view.
+   CSS-only transitions and structural animation helpers.
+   GSAP sets initial states itself via fromTo() — do NOT
+   pre-hide elements here.
    ============================================================= */
 
-/* -------------------------------------------------------------
-   Fade-up: elements start invisible and slightly below final pos
-   GSAP will tween opacity 0→1 and y 40→0
-------------------------------------------------------------- */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-/* Stagger children inside a reveal container */
-.stagger-children > * {
-  opacity: 0;
-  transform: translateY(32px);
-}
-
 
 /* -------------------------------------------------------------
-   Reveal line: used for section headings
-   Text slides up from behind an overflow:hidden clip
+   Reveal line: clip container for heading slide-up
 ------------------------------------------------------------- */
 .reveal-line {
   overflow: hidden;
@@ -31,44 +16,11 @@
 
 .reveal-line__inner {
   display: block;
-  transform: translateY(100%);
-}
-
-
-/* -------------------------------------------------------------
-   Counter number: starts at opacity 0, animates up
-------------------------------------------------------------- */
-.counter {
-  opacity: 0;
-}
-
-
-/* -------------------------------------------------------------
-   Horizontal slide-in (left and right)
-------------------------------------------------------------- */
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-48px);
-}
-
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(48px);
-}
-
-
-/* -------------------------------------------------------------
-   Scale reveal (for images / cards)
-------------------------------------------------------------- */
-.scale-in {
-  opacity: 0;
-  transform: scale(0.92);
 }
 
 
 /* -------------------------------------------------------------
    Orange underline draw animation (CSS only)
-   Applied to headings — the orange spans animate their border
 ------------------------------------------------------------- */
 .underline-draw {
   position: relative;
@@ -92,36 +44,8 @@
 
 
 /* -------------------------------------------------------------
-   Section number count-up glow
+   Section label transition
 ------------------------------------------------------------- */
 .section__label {
   transition: opacity 0.4s ease;
-}
-
-
-/* -------------------------------------------------------------
-   Process step hover — handled in main.css via CSS transition,
-   but GSAP can override for entrance animation
-------------------------------------------------------------- */
-.process-step {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-
-/* -------------------------------------------------------------
-   Parts card entrance
-------------------------------------------------------------- */
-.parts-card {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-
-/* -------------------------------------------------------------
-   About stat number pop
-------------------------------------------------------------- */
-.about-stat__num {
-  opacity: 0;
-  transform: translateY(16px);
 }
