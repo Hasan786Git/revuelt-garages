@@ -559,7 +559,7 @@ mux-player {
   position: absolute;
   bottom: 40px;
   left: 8%;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -568,6 +568,7 @@ mux-player {
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .scroll-indicator::before {

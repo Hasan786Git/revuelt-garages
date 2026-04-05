@@ -65,7 +65,7 @@
   gap: 16px;
 }
 
-.hero__scroll {
+.scroll-indicator {
   display: none; /* hide scroll indicator on small screens */
 }
 
@@ -112,7 +112,7 @@
   }
 
   /* Show scroll indicator */
-  .hero__scroll {
+  .scroll-indicator {
     display: flex;
   }
 

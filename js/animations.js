@@ -68,7 +68,7 @@ window.addEventListener('load', function initAnimations() {
       duration: 0.6,
       stagger: 0.12,
     }, 1.05)
-    .from('.hero__scroll',             { opacity: 0, duration: 0.5 }, 1.35);
+    .from('.scroll-indicator',         { opacity: 0, duration: 0.5 }, 1.35);
 
   /* -----------------------------------------------------------
      2. SECTION LABELS (all except hero)
