@@ -1,376 +1,262 @@
-/* =============================================================
-   REVUELT GARAGES — responsive.css
-   Mobile-first breakpoint overrides
-   ============================================================= */
+/* ── BASE MOBILE FIRST (max-width: 768px) ─────────────────── */
+@media (max-width: 768px) {
 
-/* -------------------------------------------------------------
-   Breakpoints used:
-     xs:  < 480px   (small phones)
-     sm:  >= 480px  (large phones)
-     md:  >= 768px  (tablets / landscape phones)
-     lg:  >= 1024px (desktop)
-     xl:  >= 1280px (wide desktop)
-------------------------------------------------------------- */
-
-
-/* -------------------------------------------------------------
-   MOBILE DEFAULT (< 768px)
-   Most styles in main.css are already mobile-friendly.
-   These rules correct layouts that assume wider screens.
-------------------------------------------------------------- */
-
-/* Show hamburger, hide desktop links + CTA */
-.nav__links,
-.nav__cta {
-  display: none;
-}
-
-.nav__hamburger {
-  display: flex;
-}
-
-/* Parts grid — 1 column mobile */
-.parts-grid {
-  grid-template-columns: 1fr;
-}
-
-/* Parts bottom CTA — stack on mobile */
-.parts-cta {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Stack form rows on mobile */
-.form-row {
-  grid-template-columns: 1fr;
-}
-
-/* Stack about columns on mobile */
-.about-cols {
-  grid-template-columns: 1fr;
-  gap: 48px;
-}
-
-/* Stats wrap on mobile */
-.about-stats {
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.about-stat {
-  padding: 0;
-}
-
-.about-stat-divider {
-  display: none;
-}
-
-/* Mission strip full width on mobile */
-.about-mission {
-  flex-direction: column;
-  gap: 12px;
-}
-
-.about-mission__quote {
-  font-size: 56px;
-}
-
-/* Stack contact forms on mobile */
-.contact-forms {
-  grid-template-columns: 1fr;
-  gap: 48px;
-}
-
-/* Remove the alignment nudge on mobile — no badge offset needed */
-.cform-title--no-badge {
-  margin-top: 0;
-}
-
-/* Contact card stacks on mobile */
-.contact-card {
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.contact-card__divider {
-  width: 48px;
-  height: 1px;
-}
-
-/* Process — 1 column stack on mobile */
-.process-steps {
-  grid-template-columns: 1fr;
-}
-
-.process-step {
-  padding: 32px 0 0;
-}
-
-.process-step + .process-step {
-  padding-left: 0;
-  border-left: none;
-  margin-top: 40px;
-}
-
-/* Feature strip — 1 column mobile */
-.process-features {
-  grid-template-columns: 1fr;
-  margin: 0 -5vw;
-  padding: 40px 5vw;
-  gap: 28px;
-}
-
-.process-feature {
-  border-left: none;
-  padding-left: 0;
-  border-top: 1px solid var(--color-border);
-  padding-top: 20px;
-}
-
-.process-feature:first-child {
-  border-top: none;
-  padding-top: 0;
-}
-
-/* Footer stacks on mobile */
-.footer-main {
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-
-.footer-center {
-  align-items: flex-start;
-}
-
-.footer-right {
-  align-items: flex-start;
-}
-
-.clock-item {
-  align-items: flex-start;
-}
-
-.clock-divider {
-  align-self: flex-start;
-}
-
-.scroll-indicator {
-  display: none; /* hide scroll indicator on small screens */
-}
-
-
-/* -------------------------------------------------------------
-   SM — 480px+
-------------------------------------------------------------- */
-@media (min-width: 480px) {
-  .hero__actions {
-    flex-wrap: nowrap;
-  }
-
-  /* about-split__visual removed — section rebuilt */
-}
-
-
-/* -------------------------------------------------------------
-   MD — 768px+  (tablets and up)
-------------------------------------------------------------- */
-@media (min-width: 768px) {
-  /* Restore desktop nav */
-  .nav__links {
-    display: flex;
-  }
-
-  .nav__cta {
-    display: inline-flex;
-  }
-
-  .nav__hamburger {
+  /* NAV */
+  .nav-links {
     display: none;
   }
 
-  /* Mobile menu should never show at this breakpoint */
-  .mobile-menu {
-    display: none !important;
+  .nav-cta {
+    display: none;
   }
 
-  /* Restore form rows */
-  .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* Show scroll indicator */
-  .scroll-indicator {
+  .hamburger {
     display: flex;
   }
 
-  /* Parts grid — 2 columns tablet */
-  .parts-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* MOBILE MENU */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #111111;
+    z-index: 99998;
+    padding: 100px 40px 40px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid #222;
   }
 
-  /* Parts bottom CTA — restore row */
-  .parts-cta {
-    flex-direction: row;
-    align-items: center;
+  .mobile-menu.open {
+    right: 0;
   }
 
-  /* Process — 3 columns restored at tablet */
-  .process-steps {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .process-step {
-    padding: 40px 40px 40px 0;
-  }
-
-  .process-step + .process-step {
-    padding-left: 40px;
-    border-left: 1px solid var(--color-border);
-    margin-top: 0;
-  }
-
-  /* Feature strip — 3 columns restored */
-  .process-features {
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 -8%;
-    padding: 48px 8%;
-    gap: 0;
-  }
-
-  .process-feature {
-    border-top: none;
-    padding-top: 0;
-    border-left: 1px solid var(--color-border);
-    padding-left: 32px;
-  }
-
-  .process-feature:first-child {
-    border-left: none;
-    padding-left: 0;
-  }
-
-  /* Restore about columns at tablet */
-  .about-cols {
-    grid-template-columns: 55fr 45fr;
-    gap: 64px;
-  }
-
-  .about-stats {
-    flex-wrap: nowrap;
-    gap: 0;
-  }
-
-  .about-stat {
-    padding: 0 32px;
-  }
-
-  .about-stat:first-child {
-    padding-left: 0;
-  }
-
-  .about-stat-divider {
+  .mobile-menu a {
     display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 0;
+    border-bottom: 1px solid #222;
+    text-decoration: none;
   }
 
-  .about-mission {
-    flex-direction: row;
-    gap: 24px;
+  .mobile-menu a:hover {
+    color: #fe6e02;
   }
 
-  .about-mission__quote {
-    font-size: 80px;
+  .mobile-menu .mobile-cta {
+    display: block;
+    margin-top: 32px;
+    background: #fe6e02;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    border: none;
+    border-bottom: none;
   }
 
-  /* Contact forms side by side at tablet */
-  .contact-forms {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  /* HERO */
+  #home {
+    padding: 0;
   }
 
-  .cform-title--no-badge {
-    margin-top: 37px;
+  .hero__heading {
+    font-size: 52px !important;
+    line-height: 1 !important;
   }
 
-  .contact-card {
-    flex-direction: row;
+  .hero__heading-small {
+    font-size: 13px !important;
+  }
+
+  .hero-content,
+  .hero__content {
+    padding: 0 6% !important;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero__actions a,
+  .hero__actions button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* PRODUCTS */
+  .parts-grid,
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #parts {
+    padding: 80px 6%;
+  }
+
+  /* SAMPLE KIT */
+  #sample {
+    padding: 80px 6%;
+  }
+
+  .sample-kit-content h2 {
+    font-size: 48px !important;
+  }
+
+  .sample-kit-content .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* GARAGE DOORS */
+  #doors h2 {
+    font-size: 52px !important;
+    line-height: 1 !important;
+  }
+
+  #doors .doors-subline {
+    font-size: 28px !important;
+  }
+
+  #doors .door-types {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* HOW IT WORKS */
+  .process-grid,
+  .steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .feature-strip,
+  .process-features {
+    grid-template-columns: 1fr !important;
+  }
+
+  #process {
+    padding: 80px 6%;
+  }
+
+  /* ABOUT */
+  .about-grid,
+  .about-columns {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  .about-left,
+  .about-right {
+    transform: none !important;
+  }
+
+  .stats-row {
+    gap: 24px !important;
     flex-wrap: wrap;
   }
 
-  .contact-card__divider {
-    width: 1px;
-    height: 48px;
+  .coverage-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
 
-  /* Footer 3-column at tablet */
-  .footer-main {
-    grid-template-columns: 1fr auto 1fr;
+  #about {
+    padding: 80px 6%;
   }
 
-  .footer-center {
-    align-items: center;
-  }
-
-  .footer-right {
-    align-items: flex-end;
-  }
-
-  .clock-item {
-    align-items: flex-end;
-  }
-
-  .clock-divider {
-    align-self: flex-end;
-  }
-}
-
-
-/* -------------------------------------------------------------
-   LG — 1024px+  (desktop)
-------------------------------------------------------------- */
-@media (min-width: 1024px) {
-  /* Wider process step gap */
-  .process-step {
-    gap: 48px;
-    padding: 40px 0;
-  }
-
-  .about-cols {
-    gap: 80px;
-  }
-
+  /* CONTACT */
+  .forms-grid,
   .contact-forms {
-    gap: 80px;
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+
+  .form-left,
+  .form-right {
+    transform: none !important;
+  }
+
+  #contact {
+    padding: 80px 6%;
+  }
+
+  /* FOOTER */
+  .footer-main {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* CUSTOM CURSOR — hide on mobile */
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  /* SECTION HEADINGS */
+  h2 {
+    font-size: 36px !important;
+  }
+
+  /* GENERAL PADDING */
+  section {
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+
+  /* MARQUEE */
+  .marquee-track {
+    animation-duration: 20s;
   }
 }
 
+/* ── TABLET (768px - 1024px) ──────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) {
 
-/* -------------------------------------------------------------
-   XL — 1280px+  (wide desktop)
-------------------------------------------------------------- */
-@media (min-width: 1280px) {
-  /* Parts stays 3 columns on wide screens */
-  .parts-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .parts-grid,
+  .products-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
 
-  .doors-showcase {
-    grid-template-columns: repeat(3, 1fr);
+  .hero__heading {
+    font-size: 72px !important;
+  }
+
+  .about-grid,
+  .about-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  .forms-grid,
+  .contact-forms {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
+/* ── LARGE DESKTOP (1400px+) ─────────────────────────────── */
+@media (min-width: 1400px) {
+  .hero__heading {
+    font-size: 120px !important;
+  }
 
-/* -------------------------------------------------------------
-   REDUCED MOTION
-   Respect users who prefer minimal animation
-------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration:   0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration:  0.01ms !important;
-    scroll-behavior:      auto !important;
+  #doors h2 {
+    font-size: 110px !important;
   }
 }
