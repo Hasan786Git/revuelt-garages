@@ -13,7 +13,7 @@ window.addEventListener('load', function initAnimations() {
     console.warn('Revuelt: GSAP not loaded — skipping animations.');
     // Ensure all animated elements are visible even without GSAP
     document.querySelectorAll(
-      '.process-step, .parts-card, .about-stat__num, .fade-up, .stagger-children > *'
+      '.process-step, .parts-card, .about-stat__num, .fade-up, .stagger-children > *, .parts-card'
     ).forEach(el => {
       el.style.opacity  = '1';
       el.style.transform = 'none';
@@ -110,15 +110,16 @@ window.addEventListener('load', function initAnimations() {
   });
 
   /* -----------------------------------------------------------
-     5. PARTS CARDS — staggered entrance
+     5. PARTS CARDS — fade-up with 0.1s stagger
+     Initial opacity/transform set in CSS on .parts-card
   ----------------------------------------------------------- */
   if (document.querySelector('.parts-card')) {
     gsap.to('.parts-card', {
-      opacity:  1,
-      y:        0,
-      duration: 0.7,
-      ease:     'power3.out',
-      stagger:  0.12,
+      opacity:   1,
+      y:         0,
+      duration:  0.65,
+      ease:      'power3.out',
+      stagger:   0.1,
       scrollTrigger: {
         trigger: '.parts-grid',
         start:   'top 82%',

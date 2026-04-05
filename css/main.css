@@ -581,47 +581,133 @@ mux-player {
 
 
 /* -------------------------------------------------------------
-   7. PARTS GRID
+   7. PARTS SECTION — // 02 PIEZAS
 ------------------------------------------------------------- */
-.parts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  margin-top: 56px;
+.parts-section {
+  background-color: var(--color-dark);
+  padding: 120px var(--section-pad-x);
 }
 
+/* Header */
+.parts-header {
+  margin-bottom: 64px;
+}
+
+.parts-header__labels {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.parts-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-orange);
+  letter-spacing: 0.2em;
+}
+
+.parts-es {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.parts-heading {
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.parts-sub {
+  font-size: 16px;
+  color: var(--color-mid-gray);
+  line-height: 1.65;
+}
+
+/* Grid — 3 col desktop */
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 72px;
+}
+
+/* Card */
 .parts-card {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: border-color var(--duration-med), transform var(--duration-med) var(--ease-smooth);
+  background-color: #484849;
+  border-left: 3px solid var(--color-orange);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  transition: background-color var(--duration-med) var(--ease-smooth);
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(24px);
 }
 
 .parts-card:hover {
-  border-color: rgba(254, 110, 2, 0.4);
-  transform: translateY(-4px);
+  background-color: #555556;
 }
 
-.parts-card__img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+.parts-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.parts-card__title {
-  font-size: 16px;
+.parts-card__name {
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 20px 20px 8px;
+  letter-spacing: 0.04em;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
 .parts-card__desc {
   font-size: 14px;
   color: var(--color-mid-gray);
-  padding: 0 20px 24px;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+.parts-card__cta {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  transition: letter-spacing var(--duration-fast);
+}
+
+.parts-card__cta:hover {
+  letter-spacing: 0.14em;
+}
+
+/* Bottom CTA row */
+.parts-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 48px;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.parts-cta__text {
+  font-size: 18px;
+  color: var(--color-light-gray);
+  font-weight: 500;
 }
 
 

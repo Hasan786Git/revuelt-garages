@@ -29,6 +29,17 @@
   display: flex;
 }
 
+/* Parts grid — 1 column mobile */
+.parts-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Parts bottom CTA — stack on mobile */
+.parts-cta {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* Stack form rows on mobile */
 .form-row {
   grid-template-columns: 1fr;
@@ -116,6 +127,17 @@
     display: flex;
   }
 
+  /* Parts grid — 2 columns tablet */
+  .parts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Parts bottom CTA — restore row */
+  .parts-cta {
+    flex-direction: row;
+    align-items: center;
+  }
+
   /* Restore about layout */
   .about-split {
     grid-template-columns: 1fr 1fr;
@@ -166,9 +188,9 @@
    XL — 1280px+  (wide desktop)
 ------------------------------------------------------------- */
 @media (min-width: 1280px) {
-  /* Slightly more breathing room on very wide screens */
+  /* Parts stays 3 columns on wide screens */
   .parts-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .doors-showcase {
