@@ -13,7 +13,7 @@ window.addEventListener('load', function initAnimations() {
     console.warn('Revuelt: GSAP not loaded — skipping animations.');
     // Ensure all animated elements are visible even without GSAP
     document.querySelectorAll(
-      '.process-step, .process-features, .parts-card, .about-left, .about-right, .about-stat, .about-mission, .fade-up, .stagger-children > *'
+      '.process-step, .process-features, .parts-card, .about-left, .about-right, .stat-item, .about-mission, .fade-up, .stagger-children > *'
     ).forEach(el => {
       el.style.opacity  = '1';
       el.style.transform = 'none';
@@ -184,38 +184,17 @@ window.addEventListener('load', function initAnimations() {
     });
 
     /* Stats pop in with stagger */
-    gsap.to('.about-stat', {
-      opacity:  1,
-      y:        0,
+    gsap.from('.stat-item', {
+      opacity:  0,
+      y:        16,
       duration: 0.55,
       ease:     'back.out(1.4)',
       stagger:  0.12,
       scrollTrigger: {
-        trigger: '.about-stats',
+        trigger: '.stats-row',
         start:   'top 88%',
       },
     });
-
-    /* Count-up for the 1,000+ stat */
-    const countEl = document.querySelector('[data-target="1000"]');
-    if (countEl) {
-      const suffix = countEl.dataset.suffix || '';
-      ScrollTrigger.create({
-        trigger: countEl,
-        start: 'top 88%',
-        once: true,
-        onEnter: () => {
-          gsap.to({ val: 0 }, {
-            val: 1000,
-            duration: 1.8,
-            ease: 'power2.out',
-            onUpdate: function () {
-              countEl.textContent = Math.round(this.targets()[0].val).toLocaleString() + suffix;
-            },
-          });
-        },
-      });
-    }
 
     /* Mission strip */
     gsap.to('.about-mission', {
