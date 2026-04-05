@@ -2,42 +2,35 @@
 @media (max-width: 768px) {
 
   /* NAV — hide links and CTA */
-  .nav__links,
-  .nav_links,
-  ul.nav__links,
-  .nav a.nav__cta,
-  .nav a.nav_cta,
-  a.nav__cta,
-  .btn--orange.nav__cta,
-  .nav .btn-orange,
+  .nav__links {
+    display: none !important;
+  }
+
   .nav__cta {
     display: none !important;
   }
 
   /* HAMBURGER — show and style */
-  .hamburger {
+  .nav__hamburger {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 5px !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 44px !important;
+    height: 44px !important;
     background: transparent !important;
     border: none !important;
     cursor: pointer !important;
     padding: 8px !important;
-    z-index: 99999 !important;
   }
 
-  .hamburger__line,
-  .hamburger span {
+  .nav__hamburger .hamburger__line {
     display: block !important;
     width: 24px !important;
     height: 2px !important;
     background: #f2f2f2 !important;
     border-radius: 2px !important;
-    transition: all 0.3s ease !important;
   }
 
   /* HERO */
