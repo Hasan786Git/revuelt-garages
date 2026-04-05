@@ -884,32 +884,141 @@ mux-player {
 
 
 /* -------------------------------------------------------------
-   9. DOORS SHOWCASE
+   9. DOORS SECTION — // 04 PUERTAS
+   Cinematic full-viewport, video background
 ------------------------------------------------------------- */
-.doors-showcase {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 56px;
+.doors-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Fallback while video loads */
+  background-color: #0d0d0d;
 }
 
-.door-item__img {
-  width: 100%;
-  margin-bottom: 20px;
+/* Heavy overlay — more opaque than hero */
+.doors-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 1;
 }
 
-.door-item__title {
-  font-size: 18px;
+/* Content left-aligned */
+.doors-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+/* Label row */
+.doors-labels {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.doors-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-orange);
+  letter-spacing: 0.2em;
+}
+
+.doors-es {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-orange);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Main headline — 90px cinematic */
+.doors-heading {
+  font-size: clamp(52px, 9vw, 90px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  color: var(--color-text);
+  margin: 0 0 8px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+/* Subline — orange, large */
+.doors-subline {
+  font-size: clamp(28px, 4.5vw, 48px);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 6px;
-  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-orange);
+  margin: 0 0 32px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-.door-item__spec {
+/* Door types strip */
+.doors-types {
   font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--color-mid-gray);
+  margin: 0 0 24px;
+  line-height: 1.8;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* Coming soon pill */
+.doors-badge {
+  display: inline-block;
+  background-color: var(--color-orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 40px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* Outline CTA button */
+.doors-cta {
+  background-color: transparent;
+  color: var(--color-orange);
+  border: 2px solid var(--color-orange);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 15px 36px;
+  transition: background-color var(--duration-fast),
+              color var(--duration-fast),
+              box-shadow var(--duration-fast);
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.doors-cta:hover {
+  background-color: var(--color-orange);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(254, 110, 2, 0.35);
 }
 
 

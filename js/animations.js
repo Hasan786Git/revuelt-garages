@@ -162,20 +162,60 @@ window.addEventListener('load', function initAnimations() {
   }
 
   /* -----------------------------------------------------------
-     8. DOORS SHOWCASE
+     8. DOORS SECTION — cinematic scroll entrance
+     Elements animate in sequence: headline → subline → types → badge → cta
   ----------------------------------------------------------- */
-  if (document.querySelector('.door-item')) {
-    gsap.from('.door-item', {
-      opacity:  0,
-      y:        36,
-      duration: 0.7,
-      ease:     'power3.out',
-      stagger:  0.14,
+  if (document.querySelector('.doors-section')) {
+    const doorsTl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.doors-showcase',
-        start:   'top 82%',
+        trigger: '.doors-section',
+        start:   'top 75%',
       },
     });
+
+    doorsTl
+      /* Labels fade in first, quickly */
+      .from('.doors-labels', {
+        opacity:  0,
+        x:        -24,
+        duration: 0.45,
+        ease:     'power2.out',
+      })
+      /* Headline slides up dramatically */
+      .to('.doors-heading', {
+        opacity:   1,
+        y:         0,
+        duration:  0.85,
+        ease:      'power3.out',
+      }, '-=0.1')
+      /* Subline follows 0.2s behind */
+      .to('.doors-subline', {
+        opacity:   1,
+        y:         0,
+        duration:  0.7,
+        ease:      'power3.out',
+      }, '-=0.65')
+      /* Door types strip */
+      .to('.doors-types', {
+        opacity:   1,
+        y:         0,
+        duration:  0.55,
+        ease:      'power2.out',
+      }, '-=0.45')
+      /* Badge pops in */
+      .to('.doors-badge', {
+        opacity:   1,
+        y:         0,
+        duration:  0.4,
+        ease:      'back.out(1.4)',
+      }, '-=0.2')
+      /* CTA last */
+      .to('.doors-cta', {
+        opacity:   1,
+        y:         0,
+        duration:  0.4,
+        ease:      'power2.out',
+      }, '-=0.1');
   }
 
   /* -----------------------------------------------------------
