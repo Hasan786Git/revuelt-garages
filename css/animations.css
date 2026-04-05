@@ -1,5 +1,9 @@
-/* Animations handled entirely by GSAP in js/animations.js */
-/* No CSS pre-hiding of elements */
+/* All elements visible by default */
+* {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
 
 .marquee-track {
   display: flex;
@@ -10,6 +14,6 @@
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(0) !important; }
+  100% { transform: translateX(-50%) !important; }
 }

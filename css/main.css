@@ -649,9 +649,6 @@ mux-player {
   justify-content: space-between;
   gap: 24px;
   transition: background-color var(--duration-med) var(--ease-smooth);
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 .parts-card:hover {
@@ -751,10 +748,6 @@ mux-player {
   height: 80px;
   background-color: var(--color-orange);
   margin-bottom: 36px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
 }
 
 /* Free badge pill */
@@ -769,9 +762,6 @@ mux-player {
   padding: 6px 16px;
   border-radius: 100px;
   margin-bottom: 28px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 /* Headline */
@@ -783,9 +773,6 @@ mux-player {
   line-height: 1.0;
   color: var(--color-text);
   margin-bottom: 28px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(32px);
 }
 
 /* Body copy */
@@ -795,9 +782,6 @@ mux-player {
   line-height: 1.75;
   max-width: 600px;
   margin-bottom: 48px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 /* CTA button — larger than standard */
@@ -809,9 +793,6 @@ mux-player {
   border: 1.5px solid var(--color-orange);
   letter-spacing: 0.1em;
   margin-bottom: 20px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .sample-btn:hover {
@@ -825,8 +806,6 @@ mux-player {
   font-size: 13px;
   color: var(--color-mid-gray);
   letter-spacing: 0.04em;
-  /* GSAP start state */
-  opacity: 0;
 }
 
 
@@ -948,9 +927,6 @@ mux-player {
   line-height: 1.0;
   color: var(--color-text);
   margin: 0 0 8px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(80px);
 }
 
 /* Subline — orange, large */
@@ -962,9 +938,6 @@ mux-player {
   line-height: 1.1;
   color: var(--color-orange);
   margin: 0 0 32px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(40px);
 }
 
 /* Door types strip */
@@ -976,9 +949,6 @@ mux-player {
   color: var(--color-mid-gray);
   margin: 0 0 24px;
   line-height: 1.8;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 /* Coming soon pill */
@@ -993,9 +963,6 @@ mux-player {
   padding: 6px 16px;
   border-radius: 100px;
   margin-bottom: 40px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 /* Outline CTA button */
@@ -1010,9 +977,6 @@ mux-player {
   transition: background-color var(--duration-fast),
               color var(--duration-fast),
               box-shadow var(--duration-fast);
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(16px);
 }
 
 .doors-cta:hover {
@@ -1086,9 +1050,6 @@ mux-player {
 .process-step {
   padding: 40px 40px 40px 0;
   border-top: 2px solid var(--color-orange);
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(40px);
 }
 
 /* Divider between steps on desktop */
@@ -1134,9 +1095,6 @@ mux-player {
   padding: 48px 8%;
   /* Pull to full section width — compensate for section padding */
   margin: 0 -8%;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 .process-feature {
@@ -1188,9 +1146,6 @@ mux-player {
 
 /* LEFT column */
 .about-left {
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(32px);
 }
 
 .about-labels {
@@ -1268,9 +1223,6 @@ mux-player {
 
 /* RIGHT column */
 .about-right {
-  /* GSAP start state — slight delay via stagger */
-  opacity: 0;
-  transform: translateY(32px);
 }
 
 .about-coverage-label {
@@ -1311,9 +1263,6 @@ mux-player {
   background-color: var(--color-charcoal);
   padding: 60px 8%;
   margin: 0 -8%;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 .about-mission__quote {
@@ -1347,9 +1296,6 @@ mux-player {
 .contact-header {
   text-align: center;
   margin-bottom: 72px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(24px);
 }
 
 .contact-labels {
@@ -1401,9 +1347,6 @@ mux-player {
 
 /* Individual form wrapper */
 .contact-form-wrap {
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(28px);
 }
 
 /* Form badge */
@@ -1582,9 +1525,6 @@ mux-player {
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 60px;
-  /* GSAP start state */
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 .contact-card__item {
