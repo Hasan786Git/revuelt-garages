@@ -712,13 +712,128 @@ mux-player {
 
 
 /* -------------------------------------------------------------
-   8. SAMPLE FORM
+   8. SAMPLE SECTION — // 03 MUESTRA GRATIS
 ------------------------------------------------------------- */
-.sample-form {
-  margin-top: 48px;
-  max-width: 680px;
+.sample-section {
+  position: relative;
+  background-color: var(--color-dark);
+  padding: 140px var(--section-pad-x);
+  /* Subtle orange grain overlay via pseudo-element */
+  overflow: hidden;
 }
 
+/* Orange grain wash — 3% opacity radial glow */
+.sample-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(254, 110, 2, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Centered content column, max 800px */
+.sample-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0; /* individual margins handle spacing */
+}
+
+/* Vertical orange accent line above headline */
+.sample-accent {
+  width: 4px;
+  height: 80px;
+  background-color: var(--color-orange);
+  margin-bottom: 36px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+/* Free badge pill */
+.sample-badge {
+  display: inline-block;
+  background-color: var(--color-orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* Headline */
+.sample-heading {
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  color: var(--color-text);
+  margin-bottom: 28px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+/* Body copy */
+.sample-body {
+  font-size: 18px;
+  color: var(--color-mid-gray);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 48px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* CTA button — larger than standard */
+.sample-btn {
+  font-size: 15px;
+  padding: 20px 48px;
+  background-color: var(--color-orange);
+  color: #fff;
+  border: 1.5px solid var(--color-orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  /* GSAP start state */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.sample-btn:hover {
+  background-color: var(--color-orange-dim);
+  border-color: var(--color-orange-dim);
+  box-shadow: 0 12px 36px rgba(254, 110, 2, 0.4);
+}
+
+/* Fine print */
+.sample-fine {
+  font-size: 13px;
+  color: var(--color-mid-gray);
+  letter-spacing: 0.04em;
+  /* GSAP start state */
+  opacity: 0;
+}
+
+
+/* -------------------------------------------------------------
+   8b. SHARED FORM STYLES
+   (used in contact section)
+------------------------------------------------------------- */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -765,10 +880,6 @@ mux-player {
 .form-group textarea:focus {
   border-color: var(--color-orange);
   background-color: rgba(254, 110, 2, 0.04);
-}
-
-.sample-form .btn {
-  margin-top: 24px;
 }
 
 

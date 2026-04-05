@@ -196,16 +196,65 @@ window.addEventListener('load', function initAnimations() {
   }
 
   /* -----------------------------------------------------------
-     10. FORMS — fade up as a unit
+     10. SAMPLE SECTION — sequential fade-ups
+     Initial states are set in CSS on each element.
   ----------------------------------------------------------- */
-  ['.sample-form', '.contact-form'].forEach((sel) => {
-    if (!document.querySelector(sel)) return;
-    gsap.from(sel, {
+  if (document.querySelector('.sample-section')) {
+    const sampleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.sample-section',
+        start:   'top 78%',
+      },
+    });
+
+    sampleTl
+      .to('.sample-accent', {
+        opacity:   1,
+        scaleY:    1,
+        duration:  0.5,
+        ease:      'power2.out',
+      })
+      .to('.sample-badge', {
+        opacity:   1,
+        y:         0,
+        duration:  0.45,
+        ease:      'power2.out',
+      }, '-=0.1')
+      .to('.sample-heading', {
+        opacity:   1,
+        y:         0,
+        duration:  0.7,
+        ease:      'power3.out',
+      }, '-=0.1')
+      .to('.sample-body', {
+        opacity:   1,
+        y:         0,
+        duration:  0.6,
+        ease:      'power2.out',
+      }, '-=0.2')
+      .to('.sample-btn', {
+        opacity:   1,
+        y:         0,
+        duration:  0.5,
+        ease:      'power2.out',
+      }, '-=0.15')
+      .to('.sample-fine', {
+        opacity:   1,
+        duration:  0.4,
+        ease:      'power1.out',
+      }, '-=0.1');
+  }
+
+  /* -----------------------------------------------------------
+     11. CONTACT FORM — fade up as a unit
+  ----------------------------------------------------------- */
+  if (document.querySelector('.contact-form')) {
+    gsap.from('.contact-form', {
       opacity:  0,
       y:        32,
       duration: 0.75,
       ease:     'power3.out',
-      scrollTrigger: { trigger: sel, start: 'top 85%' },
+      scrollTrigger: { trigger: '.contact-form', start: 'top 85%' },
     });
-  });
+  }
 });
