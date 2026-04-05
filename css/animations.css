@@ -1,51 +1,15 @@
-/* =============================================================
-   REVUELT GARAGES — animations.css
-   CSS-only transitions and structural animation helpers.
-   GSAP sets initial states itself via fromTo() — do NOT
-   pre-hide elements here.
-   ============================================================= */
+/* Animations handled entirely by GSAP in js/animations.js */
+/* No CSS pre-hiding of elements */
 
-
-/* -------------------------------------------------------------
-   Reveal line: clip container for heading slide-up
-------------------------------------------------------------- */
-.reveal-line {
-  overflow: hidden;
-  display: block;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
 }
 
-.reveal-line__inner {
-  display: block;
-}
-
-
-/* -------------------------------------------------------------
-   Orange underline draw animation (CSS only)
-------------------------------------------------------------- */
-.underline-draw {
-  position: relative;
-  display: inline-block;
-}
-
-.underline-draw::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background-color: var(--color-orange);
-  transition: width 0.8s var(--ease-out-expo);
-}
-
-.underline-draw.is-visible::after {
-  width: 100%;
-}
-
-
-/* -------------------------------------------------------------
-   Section label transition
-------------------------------------------------------------- */
-.section__label {
-  transition: opacity 0.4s ease;
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
