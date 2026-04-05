@@ -1679,8 +1679,7 @@ a.contact-card__value:hover {
   color: #fff;
 }
 
-.marquee-track .marquee-dot {
-  font-size: 6px;
+.marquee-track .dot {
   opacity: 0.6;
 }
 
