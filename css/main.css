@@ -60,7 +60,7 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-size: var(--font-body);
 }
 
@@ -73,7 +73,7 @@ body {
   line-height:      1.65;
   -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   cursor: none;
   /* Hint to browser that scroll position changes frequently */
   will-change: scroll-position;
