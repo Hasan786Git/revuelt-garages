@@ -13,28 +13,28 @@ window.addEventListener('load', function() {
   // ── HERO ENTRANCE ──────────────────────────────────────────
   const heroTl = gsap.timeline({ delay: 0.2 });
 
-  heroTl.fromTo('.hero-badge',
+  heroTl.fromTo('.hero__badge',
     { opacity: 0, y: 30 },
     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
   )
-  .fromTo('.hero-small-line',
+  .fromTo('.hero__heading-small',
     { opacity: 0, y: 40 },
     { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
     '-=0.3'
   )
-  .fromTo('.hero-headline',
+  .fromTo('.hero__heading',
     { opacity: 0, y: 60 },
     { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' },
     '-=0.4'
   )
-  .fromTo('.hero-buttons',
+  .fromTo('.hero__actions',
     { opacity: 0, y: 30 },
     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
     '-=0.3'
   );
 
   // ── PRODUCTS ───────────────────────────────────────────────
-  gsap.fromTo('.product-card',
+  gsap.fromTo('.parts-card',
     { opacity: 0, y: 80 },
     {
       opacity: 1, y: 0,
@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
   );
 
   // ── SAMPLE KIT ─────────────────────────────────────────────
-  gsap.fromTo('#sample .sample-kit-content > *',
+  gsap.fromTo('.sample-inner > *',
     { opacity: 0, y: 60 },
     {
       opacity: 1, y: 0,
@@ -64,7 +64,7 @@ window.addEventListener('load', function() {
   );
 
   // ── GARAGE DOORS ───────────────────────────────────────────
-  gsap.fromTo('#doors h2',
+  gsap.fromTo('.doors-heading',
     { opacity: 0, y: 100, skewY: 3 },
     {
       opacity: 1, y: 0, skewY: 0,
@@ -77,7 +77,7 @@ window.addEventListener('load', function() {
     }
   );
 
-  gsap.fromTo('#doors .doors-subline',
+  gsap.fromTo('.doors-subline',
     { opacity: 0, y: 60 },
     {
       opacity: 1, y: 0,
@@ -90,7 +90,7 @@ window.addEventListener('load', function() {
     }
   );
 
-  gsap.fromTo('#doors .door-types, #doors .badge-pill, #doors .btn-outline',
+  gsap.fromTo('.doors-types, .doors-badge, .doors-cta',
     { opacity: 0, y: 40 },
     {
       opacity: 1, y: 0,
@@ -119,7 +119,7 @@ window.addEventListener('load', function() {
     }
   );
 
-  gsap.fromTo('.feature-item',
+  gsap.fromTo('.process-feature',
     { opacity: 0, y: 50 },
     {
       opacity: 1, y: 0,
@@ -127,7 +127,7 @@ window.addEventListener('load', function() {
       stagger: 0.15,
       ease: 'power3.out',
       scrollTrigger: {
-        trigger: '.feature-strip',
+        trigger: '.process-features',
         start: 'top 85%',
       }
     }
@@ -166,9 +166,7 @@ window.addEventListener('load', function() {
     start: 'top 85%',
     once: true,
     onEnter: () => {
-      const el = document.querySelector(
-        '.stat-number[data-count="1000"]'
-      );
+      const el = document.querySelector('.stat-number');
       if (!el) return;
       gsap.to({ val: 0 }, {
         val: 1000,
@@ -182,38 +180,26 @@ window.addEventListener('load', function() {
     }
   });
 
-  gsap.fromTo('.mission-strip',
+  gsap.fromTo('.about-mission',
     { opacity: 0, y: 60 },
     {
       opacity: 1, y: 0,
       duration: 0.9,
       ease: 'power3.out',
       scrollTrigger: {
-        trigger: '.mission-strip',
+        trigger: '.about-mission',
         start: 'top 85%',
       }
     }
   );
 
   // ── CONTACT ────────────────────────────────────────────────
-  gsap.fromTo('.form-left',
-    { opacity: 0, x: -80 },
+  gsap.fromTo('.contact-form-wrap',
+    { opacity: 0, y: 60 },
     {
-      opacity: 1, x: 0,
-      duration: 1.0,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 75%',
-      }
-    }
-  );
-
-  gsap.fromTo('.form-right',
-    { opacity: 0, x: 80 },
-    {
-      opacity: 1, x: 0,
-      duration: 1.0,
+      opacity: 1, y: 0,
+      duration: 0.9,
+      stagger: 0.2,
       ease: 'power3.out',
       scrollTrigger: {
         trigger: '#contact',
