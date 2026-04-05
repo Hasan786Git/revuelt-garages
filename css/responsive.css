@@ -1,17 +1,25 @@
 /* ── BASE MOBILE FIRST (max-width: 768px) ─────────────────── */
 @media (max-width: 768px) {
 
-  /* NAV */
-  .nav-links {
-    display: none;
-  }
-
-  .nav-cta {
-    display: none;
-  }
-
+  /* HAMBURGER */
   .hamburger {
-    display: flex;
+    display: flex !important;
+  }
+
+  /* NAV — hide all links */
+  nav .nav-links,
+  nav ul,
+  nav ol,
+  .nav__links,
+  .nav__menu,
+  header nav a:not(.nav__logo) {
+    display: none !important;
+  }
+
+  .nav-cta,
+  .nav__cta,
+  header .btn-primary {
+    display: none !important;
   }
 
   /* MOBILE MENU */
@@ -130,10 +138,14 @@
     letter-spacing: 1px !important;
   }
 
-  /* HOW IT WORKS */
+  /* HOW IT WORKS — single column */
   .process-grid,
-  .steps-grid {
+  .steps-grid,
+  .process__steps,
+  #process > div > div {
     grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 40px !important;
   }
 
@@ -146,16 +158,21 @@
     padding: 80px 6%;
   }
 
-  /* ABOUT */
+  /* ABOUT — single column */
   .about-grid,
-  .about-columns {
+  .about-columns,
+  .about__grid,
+  #about > div {
     grid-template-columns: 1fr !important;
-    gap: 48px !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .about-left,
-  .about-right {
+  .about-right,
+  .about__right {
     transform: none !important;
+    overflow: hidden !important;
   }
 
   .stats-row {
@@ -163,7 +180,8 @@
     flex-wrap: wrap;
   }
 
-  .coverage-grid {
+  .coverage-grid,
+  .cities-grid {
     grid-template-columns: 1fr 1fr !important;
   }
 
@@ -171,15 +189,22 @@
     padding: 80px 6%;
   }
 
-  /* CONTACT */
+  /* CONTACT — fix overflow and stack */
+  #contact,
+  .contact-form-wrap,
   .forms-grid,
-  .contact-forms {
+  .contact-forms,
+  .contact__forms {
+    overflow: hidden !important;
     grid-template-columns: 1fr !important;
-    gap: 48px !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .form-left,
-  .form-right {
+  .form-right,
+  .contact-form-wrap > * {
+    width: 100% !important;
     transform: none !important;
   }
 
