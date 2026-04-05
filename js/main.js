@@ -11,11 +11,23 @@
    then plays forward again — continuously.
 ------------------------------------------------------------- */
 /* -------------------------------------------------------------
-   0. HERO VIDEO
+   0. HERO VIDEO — HLS adaptive streaming via HLS.js
+   Safari natively supports HLS; all other browsers use HLS.js.
 ------------------------------------------------------------- */
 const heroVideo = document.getElementById('hero-video');
 if (heroVideo) {
-  heroVideo.play().catch(() => {});
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource('https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00.m3u8');
+    hls.attachMedia(heroVideo);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      heroVideo.play().catch(() => {});
+    });
+  } else if (heroVideo.canPlayType('application/vnd.apple.mpegurl')) {
+    // Safari — native HLS support
+    heroVideo.src = 'https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00.m3u8';
+    heroVideo.play().catch(() => {});
+  }
 }
 
 

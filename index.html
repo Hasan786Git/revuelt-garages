@@ -81,7 +81,8 @@
 
     <!-- Video background -->
     <video id="hero-video" autoplay muted loop playsinline>
-      <source src="https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00/low.mp4" type="video/mp4">
+      <source src="https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00.m3u8" type="application/x-mpegURL">
+      <source src="https://stream.mux.com/5AkNgyFGc5WEQFPmjDqFKTmQI6oLEpxV8LNB8OzD2B00/high.mp4" type="video/mp4">
     </video>
     <!-- Dark overlay sits on top of video -->
     <div class="hero-overlay" aria-hidden="true"></div>
@@ -406,6 +407,8 @@
     </div>
   </footer>
 
+  <!-- HLS.js — adaptive streaming for non-Safari browsers -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
