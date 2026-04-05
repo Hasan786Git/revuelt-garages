@@ -197,19 +197,20 @@ nav,
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   z-index: 9999;
-  padding: 0 6%;
   height: 72px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 6%;
   background: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3),
-              0 1px 0 rgba(254, 110, 2, 0.2);
-  transition: background 0.3s ease;
+              0 1px 0 rgba(254, 110, 2, 0.15);
 }
 
 nav.scrolled,
@@ -219,23 +220,33 @@ nav.scrolled,
 }
 
 .nav__inner {
-  display: contents;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 /* Logo */
 .nav__logo img {
-  height: 32px;
+  height: 36px;
   width: auto;
 }
 
 /* Nav links */
 .nav__links {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 36px;
   list-style: none;
   margin: 0;
   padding: 0;
+  position: static;
+  background: transparent;
+  height: auto;
+  width: auto;
 }
 
 .nav__link {
@@ -246,6 +257,7 @@ nav.scrolled,
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: color 0.2s ease;
+  white-space: nowrap;
   position: relative;
 }
 
@@ -272,23 +284,23 @@ nav.scrolled,
 
 /* FREE SAMPLE KIT button */
 .nav__cta {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: white;
   background: #fe6e02;
-  padding: 10px 22px;
+  padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
+  white-space: nowrap;
   border: none;
-  transition: all 0.2s ease;
   box-shadow: 0 0 20px rgba(254, 110, 2, 0.3);
+  transition: all 0.2s ease;
 }
 
 .nav__cta:hover {
   background: #ff8c3a;
   box-shadow: 0 0 30px rgba(254, 110, 2, 0.5);
-  transform: translateY(-1px);
 }
 
 /* Hamburger button */
