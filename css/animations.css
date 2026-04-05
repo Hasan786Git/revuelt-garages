@@ -1,9 +1,4 @@
-/* All elements visible by default */
-* {
-  opacity: 1 !important;
-  transform: none !important;
-  visibility: visible !important;
-}
+/* Reset only hidden states — do not override transforms */
 
 .marquee-track {
   display: flex;
@@ -14,6 +9,9 @@
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0) !important; }
-  100% { transform: translateX(-50%) !important; }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
+
+/* Remove the * override completely —
+   cursor and animations need transform to work */
