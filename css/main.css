@@ -142,7 +142,7 @@ textarea {
   top:  0;
   left: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   will-change: transform;
@@ -844,7 +844,7 @@ mux-player::part(media) {
 .explore-parts-btn {
   display: block;
   width: fit-content;
-  margin: 32px auto 0;
+  margin: 48px auto 48px;
   font-size: 12px;
   font-weight: 700;
   color: #fe6e02;
@@ -859,6 +859,55 @@ mux-player::part(media) {
 .explore-parts-btn:hover {
   background: #fe6e02;
   color: white;
+}
+
+/* ── WARRANTY CLAIM FORM ─────────────────────────────── */
+.warranty-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+  margin: 32px auto 0;
+}
+
+.warranty-form input,
+.warranty-form textarea {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #f2f2f2;
+  padding: 14px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.warranty-form input::placeholder,
+.warranty-form textarea::placeholder {
+  color: #555;
+}
+
+.warranty-form input:focus,
+.warranty-form textarea:focus {
+  border-color: #fe6e02;
+}
+
+.warranty-form button {
+  background: #fe6e02;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.warranty-form button:hover {
+  opacity: 0.85;
 }
 
 

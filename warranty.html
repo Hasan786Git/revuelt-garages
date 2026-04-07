@@ -281,11 +281,20 @@
       <p>Contact us with your order details and a description of the issue. We review all warranty claims within 1 business day.</p>
     </div>
 
-    <!-- CTA -->
+    <!-- CTA + WARRANTY CLAIM FORM -->
     <div class="page-cta-section">
       <h2>Questions about a part or warranty claim?</h2>
       <p>We respond same-day to all trade account inquiries.</p>
-      <a href="index.html#contact" class="btn btn--orange">Contact Us</a>
+
+      <form action="https://formspree.io/f/mqegjklk" method="POST" class="warranty-form">
+        <input type="hidden" name="_subject" value="Warranty Claim — Revuelt Garages">
+        <input type="text"  name="name"     placeholder="Full Name"      required>
+        <input type="text"  name="business" placeholder="Business Name"  required>
+        <input type="email" name="email"    placeholder="Email Address"  required>
+        <input type="tel"   name="phone"    placeholder="Phone Number"   required>
+        <textarea name="issue" rows="4" placeholder="Describe the issue — include part name, order date, and what happened" required></textarea>
+        <button type="submit">Submit Warranty Claim</button>
+      </form>
     </div>
 
   </main>
