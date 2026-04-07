@@ -219,7 +219,7 @@ nav.nav {
   height: 36px;
   width: auto;
   display: block;
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
   filter: drop-shadow(0 0 8px #fe6e02) drop-shadow(0 0 18px #fe6e02);
   transition: filter 0.3s ease;
 }
