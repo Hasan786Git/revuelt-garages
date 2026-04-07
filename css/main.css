@@ -219,6 +219,13 @@ nav.nav {
   height: 36px;
   width: auto;
   display: block;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 8px #fe6e02) drop-shadow(0 0 18px #fe6e02);
+  transition: filter 0.3s ease;
+}
+
+.nav__logo img:hover {
+  filter: drop-shadow(0 0 12px #fe6e02) drop-shadow(0 0 28px #fe6e02) drop-shadow(0 0 48px #fe6e02);
 }
 
 .nav__links {
