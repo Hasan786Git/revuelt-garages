@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full parts catalog — Revuelt Garages. 21 commercial-grade garage door parts for DFW trade contractors. Same-day local delivery." />
+  <title>Parts Catalog | Revuelt Garages</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    body { background: #1a1a1b; }
+
+    .catalog-wrapper {
+      padding-top: 120px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 80px 6% 64px;
+      border-bottom: 1px solid #222;
+    }
+
+    .page-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fe6e02;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .page-headline {
+      font-size: 52px;
+      font-weight: 900;
+      color: #f2f2f2;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .page-sub {
+      font-size: 18px;
+      color: #888;
+      max-width: 580px;
+      line-height: 1.65;
+    }
+
+    /* ── CATALOG GRID ── */
+    .catalog-section {
+      padding: 64px 6% 80px;
+    }
+
+    .catalog-count {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    /* ── REQUEST BANNER ── */
+    .catalog-banner-wrap {
+      padding: 0 6% 80px;
+    }
+
+    @media (max-width: 1024px) {
+      .catalog-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .page-headline { font-size: 36px; }
+      .catalog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="assets/logo-white.png" alt="Revuelt Garages" width="140" height="auto">
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="index.html#parts"   class="nav__link">Parts</a></li>
+      <li><a href="index.html#sample"  class="nav__link">Sample Kit</a></li>
+      <li><a href="index.html#doors"   class="nav__link">Doors</a></li>
+      <li><a href="index.html#process" class="nav__link">Process</a></li>
+      <li><a href="index.html#about"   class="nav__link">About</a></li>
+      <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+    </ul>
+
+    <a href="index.html#sample" class="nav__cta">Free Sample Kit</a>
+
+    <button class="nav__hamburger" id="hamburger"
+            aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="mobileMenu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </nav>
+
+  <div class="nav-secondary">
+    <a href="we-beat-competitors.html">⚡ See how Revuelt pricing compares to Home Depot &rarr;</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="index.html#parts"   class="mobile-menu__link">Parts</a></li>
+      <li><a href="index.html#sample"  class="mobile-menu__link">Sample Kit</a></li>
+      <li><a href="index.html#doors"   class="mobile-menu__link">Doors</a></li>
+      <li><a href="index.html#process" class="mobile-menu__link">Process</a></li>
+      <li><a href="index.html#about"   class="mobile-menu__link">About</a></li>
+      <li><a href="index.html#contact" class="mobile-menu__link">Contact</a></li>
+      <li><a href="index.html#sample"  class="mobile-menu__link mobile-menu__link--cta">Free Sample Kit</a></li>
+    </ul>
+  </div>
+
+  <main class="catalog-wrapper">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <span class="page-label">// All Parts</span>
+      <h1 class="page-headline">Products &amp; Parts Catalog.</h1>
+      <p class="page-sub">Commercial-grade parts for DFW trade contractors. Same-day local delivery.</p>
+    </div>
+
+    <!-- CATALOG GRID -->
+    <div class="catalog-section">
+      <p class="catalog-count">21 Parts In Stock</p>
+
+      <div class="catalog-grid parts-grid">
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Torsion Springs</h3>
+            <p class="parts-card__desc">Top 5 DFW sizes in stock. High-cycle rated. Custom sizing available.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Galvanized Cables</h3>
+            <p class="parts-card__desc">Left and right wound. 7ft and 8ft standard.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Nylon Rollers</h3>
+            <p class="parts-card__desc">2-inch and 3-inch stem, 10-ball. Nylon and steel options available.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Hinges</h3>
+            <p class="parts-card__desc">Sections 1–5. Galvanized. Replaced frequently.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Bottom Brackets</h3>
+            <p class="parts-card__desc">Standard galvanized. Replaced frequently.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Weather Seal</h3>
+            <p class="parts-card__desc">Bottom seal. Standard lengths. Easy install.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Extension Springs</h3>
+            <p class="parts-card__desc">Left and right wound. 7ft and 8ft standard.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Steel Rollers</h3>
+            <p class="parts-card__desc">2-inch short and long stem. 10-ball bearing.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">11 Gauge Hinges</h3>
+            <p class="parts-card__desc">Sections 1-6. Heavy commercial grade.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Cable Drums</h3>
+            <p class="parts-card__desc">Standard residential. Paired with cable replacements.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Torsion Shaft</h3>
+            <p class="parts-card__desc">1-inch standard. Common residential lengths in stock.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Shaft Couplers</h3>
+            <p class="parts-card__desc">Galvanized. Pairs with shaft orders.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">End Bearing Plates</h3>
+            <p class="parts-card__desc">Standard residential and commercial.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Center Bearing Plates</h3>
+            <p class="parts-card__desc">Spring assembly component.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Struts</h3>
+            <p class="parts-card__desc">9ft and 16ft. Door reinforcement.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Garage Door Locks</h3>
+            <p class="parts-card__desc">T-bar. Standard galvanized.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Fasteners</h3>
+            <p class="parts-card__desc">Hinge screw kits. Galvanized.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Spring Winding Bars</h3>
+            <p class="parts-card__desc">Sold as pairs. Included with spring kit orders.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Safety Cables</h3>
+            <p class="parts-card__desc">For extension spring systems. Code-required.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Top &amp; Side Seals</h3>
+            <p class="parts-card__desc">Rubber. Standard residential lengths.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+        <div class="parts-card">
+          <div class="parts-card__body">
+            <h3 class="parts-card__name">Opener Brackets</h3>
+            <p class="parts-card__desc">Standard galvanized. Fits most residential openers.</p>
+          </div>
+          <a href="index.html#contact" class="parts-card__cta">Get Pricing &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REQUEST BANNER -->
+    <div class="catalog-banner-wrap">
+      <div class="parts-request-banner">
+        <p>Frequently order something we don't carry? We'll source it. Just ask.</p>
+        <a href="special-requests.html" class="btn-outline-orange">REQUEST A PART &rarr;</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MARQUEE TICKER -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>TORSION SPRINGS</span><span class="dot">·</span>
+      <span>GALVANIZED CABLES</span><span class="dot">·</span>
+      <span>NYLON ROLLERS</span><span class="dot">·</span>
+      <span>HINGES</span><span class="dot">·</span>
+      <span>BOTTOM BRACKETS</span><span class="dot">·</span>
+      <span>WEATHER SEAL</span><span class="dot">·</span>
+      <span>DFW DELIVERY</span><span class="dot">·</span>
+      <span>CONTRACTORS ONLY</span><span class="dot">·</span>
+      <span>TRADE PRICING</span><span class="dot">·</span>
+      <span>SAME-DAY LOCAL</span><span class="dot">·</span>
+      <span>REVUELT GARAGES</span><span class="dot">·</span>
+      <span>TORSION SPRINGS</span><span class="dot">·</span>
+      <span>GALVANIZED CABLES</span><span class="dot">·</span>
+      <span>NYLON ROLLERS</span><span class="dot">·</span>
+      <span>HINGES</span><span class="dot">·</span>
+      <span>BOTTOM BRACKETS</span><span class="dot">·</span>
+      <span>WEATHER SEAL</span><span class="dot">·</span>
+      <span>DFW DELIVERY</span><span class="dot">·</span>
+      <span>CONTRACTORS ONLY</span><span class="dot">·</span>
+      <span>TRADE PRICING</span><span class="dot">·</span>
+      <span>SAME-DAY LOCAL</span><span class="dot">·</span>
+      <span>REVUELT GARAGES</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo" aria-label="Back to home">
+          <img src="assets/logo-white.png" alt="Revuelt Garages" width="120" height="auto" />
+        </a>
+        <p class="footer-tagline">Wholesale garage door parts<br>for professional contractors.</p>
+      </div>
+
+      <nav class="footer-center" aria-label="Footer navigation">
+        <a href="index.html#parts"   class="footer-link">Parts</a>
+        <a href="index.html#sample"  class="footer-link">Sample Kit</a>
+        <a href="index.html#doors"   class="footer-link">Doors</a>
+        <a href="index.html#process" class="footer-link">Process</a>
+        <a href="index.html#about"   class="footer-link">About</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </nav>
+
+      <div class="footer-right">
+        <div class="clock-item">
+          <span class="clock-city">Dallas, TX</span>
+          <span class="clock-time" id="clock-dallas">00:00:00</span>
+        </div>
+        <div class="clock-divider" aria-hidden="true"></div>
+        <div class="clock-item">
+          <span class="clock-city">Shenzhen, CN</span>
+          <span class="clock-time" id="clock-shenzhen">00:00:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal-links">
+      <a href="warranty.html">Warranty Policy</a>
+      <a href="special-requests.html">Special Requests</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Revuelt Garages LLC. Trade accounts only. Dallas-Fort Worth, TX.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>

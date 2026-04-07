@@ -841,6 +841,26 @@ mux-player::part(media) {
   color: white;
 }
 
+.explore-parts-btn {
+  display: block;
+  width: fit-content;
+  margin: 32px auto 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fe6e02;
+  border: 2px solid #fe6e02;
+  padding: 14px 36px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s ease;
+}
+
+.explore-parts-btn:hover {
+  background: #fe6e02;
+  color: white;
+}
+
 
 /* -------------------------------------------------------------
    8. SAMPLE SECTION — // 03 MUESTRA GRATIS
