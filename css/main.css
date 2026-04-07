@@ -1746,16 +1746,16 @@ a.contact-card__value:hover {
   align-items: center;
   gap: 28px;
   width: max-content;
-  animation: marquee-scroll 30s linear infinite;
+  animation: marquee-scroll 36s linear infinite;
   white-space: nowrap;
 }
 
 .marquee-track span {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #aaaaaa;
+  color: #ffffff;
 }
 
 .marquee-track .dot {
