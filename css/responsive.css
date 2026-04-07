@@ -147,6 +147,13 @@
     text-align: center !important;
   }
 
+  /* PARTS REQUEST BANNER */
+  .parts-request-banner {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+
   /* CURSOR — disable on mobile */
   .cursor-dot,
   .cursor-ring {
