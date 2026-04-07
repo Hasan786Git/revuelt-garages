@@ -150,6 +150,13 @@ textarea {
   display: none;
 }
 
+/* Suppress native cursor on nav so custom cursor stays visible */
+@media (hover: hover) and (pointer: fine) {
+  nav, nav a, nav * {
+    cursor: none !important;
+  }
+}
+
 /* Only show on devices that support hover (i.e. not touch) */
 @media (hover: hover) and (pointer: fine) {
   .cursor-dot {

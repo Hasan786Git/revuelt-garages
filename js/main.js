@@ -93,6 +93,22 @@ if (heroVideo) {
     dot.style.opacity  = '1';
     ring.style.opacity = '1';
   });
+
+  /** Switch cursor to white over orange backgrounds */
+  const orangeZones = document.querySelectorAll(
+    '.nav-secondary, .marquee-strip, .marquee-track, .marquee-wrapper'
+  );
+
+  orangeZones.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      dot.style.backgroundColor = '#ffffff';
+      ring.style.borderColor    = 'rgba(255,255,255,0.7)';
+    });
+    el.addEventListener('mouseleave', () => {
+      dot.style.backgroundColor = '';
+      ring.style.borderColor    = '';
+    });
+  });
 })();
 
 
