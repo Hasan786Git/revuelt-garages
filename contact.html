@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Revuelt Garages — Open a trade account or request parts pricing. DFW trade contractors only. Same-day response." />
+  <title>Contact | Revuelt Garages</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav class="nav" id="nav">
+    <a href="https://revueltgarages.com/" class="nav__logo">
+      <img src="assets/logo-transparent.png" alt="Revuelt Garages" width="140" height="auto">
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="index.html#parts"   class="nav__link">Parts</a></li>
+      <li><a href="index.html#sample"  class="nav__link">Sample Kit</a></li>
+      <li><a href="index.html#doors"   class="nav__link">Doors</a></li>
+      <li><a href="index.html#process" class="nav__link">Process</a></li>
+      <li><a href="index.html#about"   class="nav__link">About</a></li>
+      <li><a href="contact.html"       class="nav__link nav__link--active">Contact</a></li>
+    </ul>
+
+    <a href="index.html#sample" class="nav__cta">Free Sample Kit</a>
+
+    <button class="nav__hamburger" id="hamburger"
+            aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="mobileMenu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </nav>
+
+  <div class="nav-secondary">
+    <a href="we-beat-competitors.html">⚡ See how Revuelt pricing compares to Home Depot &rarr;</a>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="index.html#parts"   class="mobile-menu__link">Parts</a></li>
+      <li><a href="index.html#sample"  class="mobile-menu__link">Sample Kit</a></li>
+      <li><a href="index.html#doors"   class="mobile-menu__link">Doors</a></li>
+      <li><a href="index.html#process" class="mobile-menu__link">Process</a></li>
+      <li><a href="index.html#about"   class="mobile-menu__link">About</a></li>
+      <li><a href="contact.html"       class="mobile-menu__link">Contact</a></li>
+      <li><a href="index.html#sample"  class="mobile-menu__link mobile-menu__link--cta">Free Sample Kit</a></li>
+    </ul>
+  </div>
+
+  <main class="contact-page-wrapper">
+
+    <!-- PAGE HEADER -->
+    <div class="contact-page-header">
+      <span class="page-label">// 07 &nbsp; Contacto</span>
+      <h1 class="page-headline">Get In Touch.</h1>
+      <p class="page-sub">Trade accounts and pricing inquiries only. We respond same-day.</p>
+    </div>
+
+    <!-- CONTACT INFO BLOCKS -->
+    <div class="contact-page-info">
+
+      <div class="contact-info-block">
+        <span class="info-label">Phone</span>
+        <a href="tel:+19725550198" class="info-value">(972) 555-0198</a>
+        <span class="info-note">Call or text — we answer</span>
+      </div>
+
+      <div class="contact-info-block">
+        <span class="info-label">Email</span>
+        <a href="mailto:parts@revueltgarages.com" class="info-value">parts@revueltgarages.com</a>
+        <span class="info-note">Same-day response on trade inquiries</span>
+      </div>
+
+      <div class="contact-info-block">
+        <span class="info-label">Location &amp; Hours</span>
+        <span class="info-value">Irving, TX</span>
+        <span class="info-note">Serving DFW &amp; surrounding suburbs<br>Mon–Sat &nbsp;·&nbsp; 7am–6pm CT</span>
+      </div>
+
+    </div>
+
+    <!-- FORMS -->
+    <div class="contact-page-forms">
+
+      <div class="contact-forms">
+
+        <!-- LEFT: Trade Account Application -->
+        <div class="contact-form-wrap">
+          <span class="cform-badge">Contractors Only</span>
+          <h3 class="cform-title">Open Your Trade Account.</h3>
+          <form class="cform" id="tradeForm" action="https://formspree.io/f/xeepppjv" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Trade Account Application — Revuelt Garages">
+            <input type="hidden" name="_replyto" value="">
+            <input type="text"  name="full_name"     placeholder="Full Name"      autocomplete="name"         required />
+            <input type="text"  name="business_name" placeholder="Business Name"  autocomplete="organization" required />
+            <input type="tel"   name="phone"         placeholder="Phone Number"   autocomplete="tel"          required />
+            <input type="email" name="email"         placeholder="Email Address"  autocomplete="email"        required />
+            <select name="city" required>
+              <option value="" disabled selected>City / Area</option>
+              <option>Irving</option>
+              <option>Arlington</option>
+              <option>Plano</option>
+              <option>Garland</option>
+              <option>McKinney</option>
+              <option>Frisco</option>
+              <option>Mansfield</option>
+              <option>Burleson</option>
+              <option>Grand Prairie</option>
+              <option>Rockwall</option>
+              <option>Allen</option>
+              <option>Mesquite</option>
+              <option>Other</option>
+            </select>
+            <select name="team_size" required>
+              <option value="" disabled selected>How many techs?</option>
+              <option>1</option>
+              <option>2–3</option>
+              <option>4–5</option>
+              <option>5+</option>
+            </select>
+            <fieldset class="cform-checkgroup">
+              <legend>What do you order most?</legend>
+              <label class="cform-check"><input type="checkbox" name="parts" value="springs" /> Springs</label>
+              <label class="cform-check"><input type="checkbox" name="parts" value="rollers" /> Rollers</label>
+              <label class="cform-check"><input type="checkbox" name="parts" value="cables"  /> Cables</label>
+              <label class="cform-check"><input type="checkbox" name="parts" value="hinges"  /> Hinges</label>
+              <label class="cform-check"><input type="checkbox" name="parts" value="other"   /> Other</label>
+            </fieldset>
+            <label class="cform-check cform-check--standalone">
+              <input type="checkbox" name="sample_kit" value="yes" checked />
+              Send me a FREE sample kit
+            </label>
+            <button type="submit" class="cform-submit">Submit Application</button>
+          </form>
+        </div>
+
+        <!-- RIGHT: Quote Request -->
+        <div class="contact-form-wrap">
+          <h3 class="cform-title cform-title--no-badge">Get Parts &amp; Pricing.</h3>
+          <form class="cform" id="quoteForm" action="https://formspree.io/f/mojpppar" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Quote Request — Revuelt Garages">
+            <input type="hidden" name="_replyto" value="">
+            <input type="text"  name="name"        placeholder="Name"              autocomplete="name"  required />
+            <input type="text"  name="phone_email" placeholder="Phone or Email"                         required />
+            <textarea           name="needs"       placeholder="What do you need?" rows="4"             required></textarea>
+            <select name="timeline" required>
+              <option value="" disabled selected>How soon?</option>
+              <option>ASAP</option>
+              <option>This Week</option>
+              <option>Just Exploring</option>
+            </select>
+            <label class="cform-check cform-check--standalone">
+              <input type="checkbox" name="sample_kit" value="yes" />
+              Send me a free sample kit
+            </label>
+            <button type="submit" class="cform-submit">Send Request</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MARQUEE TICKER -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>TORSION SPRINGS</span><span class="dot">·</span>
+      <span>GALVANIZED CABLES</span><span class="dot">·</span>
+      <span>NYLON ROLLERS</span><span class="dot">·</span>
+      <span>HINGES</span><span class="dot">·</span>
+      <span>BOTTOM BRACKETS</span><span class="dot">·</span>
+      <span>WEATHER SEAL</span><span class="dot">·</span>
+      <span>DFW DELIVERY</span><span class="dot">·</span>
+      <span>CONTRACTORS ONLY</span><span class="dot">·</span>
+      <span>TRADE PRICING</span><span class="dot">·</span>
+      <span>SAME-DAY LOCAL</span><span class="dot">·</span>
+      <span>REVUELT GARAGES</span><span class="dot">·</span>
+      <span>TORSION SPRINGS</span><span class="dot">·</span>
+      <span>GALVANIZED CABLES</span><span class="dot">·</span>
+      <span>NYLON ROLLERS</span><span class="dot">·</span>
+      <span>HINGES</span><span class="dot">·</span>
+      <span>BOTTOM BRACKETS</span><span class="dot">·</span>
+      <span>WEATHER SEAL</span><span class="dot">·</span>
+      <span>DFW DELIVERY</span><span class="dot">·</span>
+      <span>CONTRACTORS ONLY</span><span class="dot">·</span>
+      <span>TRADE PRICING</span><span class="dot">·</span>
+      <span>SAME-DAY LOCAL</span><span class="dot">·</span>
+      <span>REVUELT GARAGES</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo" aria-label="Back to home">
+          <img src="assets/logo-transparent.png" alt="Revuelt Garages" width="120" height="auto" />
+        </a>
+        <p class="footer-tagline">Wholesale garage door parts<br>for professional contractors.</p>
+      </div>
+
+      <nav class="footer-center" aria-label="Footer navigation">
+        <a href="index.html#parts"   class="footer-link">Parts</a>
+        <a href="index.html#sample"  class="footer-link">Sample Kit</a>
+        <a href="index.html#doors"   class="footer-link">Doors</a>
+        <a href="index.html#process" class="footer-link">Process</a>
+        <a href="index.html#about"   class="footer-link">About</a>
+        <a href="contact.html"       class="footer-link">Contact</a>
+      </nav>
+
+      <div class="footer-right">
+        <div class="clock-item">
+          <span class="clock-city">Dallas, TX</span>
+          <span class="clock-time" id="clock-dallas">00:00:00</span>
+        </div>
+        <div class="clock-divider" aria-hidden="true"></div>
+        <div class="clock-item">
+          <span class="clock-city">Shenzhen, CN</span>
+          <span class="clock-time" id="clock-shenzhen">00:00:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal-links">
+      <a href="warranty.html">Warranty Policy</a>
+      <a href="special-requests.html">Special Requests</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Revuelt Garages LLC. Trade accounts only. Dallas-Fort Worth, TX.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
