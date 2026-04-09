@@ -2375,3 +2375,257 @@ a.contact-info-block .info-value:hover,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* -------------------------------------------------------------
+   18. CATEGORY GRID (index.html parts section)
+------------------------------------------------------------- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 48px;
+}
+
+.category-card {
+  background: #1a1a1b;
+  border: 1px solid #222;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card:hover {
+  border-color: #fe6e02;
+  background: #1e1e1f;
+}
+
+.cat-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #111;
+  border: 1px solid #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #2a2a2a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.category-card-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.category-card-sub {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .category-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 580px) {
+  .category-grid { grid-template-columns: 1fr; }
+}
+
+
+/* -------------------------------------------------------------
+   19. PARTS CATALOG — FILTER BAR + CATALOG GRID
+------------------------------------------------------------- */
+.parts-filter-bar {
+  position: sticky;
+  top: 72px;
+  z-index: 9000;
+  background: #131314;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 14px 6%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.parts-search-input {
+  flex: 1;
+  min-width: 200px;
+  background: #0d0d0d;
+  border: 1px solid #222;
+  color: #f2f2f2;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  padding: 9px 14px;
+  outline: none;
+  transition: border-color 0.18s;
+  -webkit-appearance: none;
+}
+
+.parts-search-input:focus {
+  border-color: #fe6e02;
+}
+
+.parts-search-input::placeholder {
+  color: #333;
+}
+
+.parts-filter-select {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  padding: 9px 14px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.18s;
+  -webkit-appearance: none;
+}
+
+.parts-filter-select:focus {
+  border-color: #fe6e02;
+}
+
+.filter-clear {
+  background: none;
+  border: 1px solid #222;
+  color: #444;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+}
+
+.filter-clear:hover {
+  border-color: #fe6e02;
+  color: #fe6e02;
+}
+
+.catalog-category-section {
+  padding: 48px 6% 40px;
+  border-bottom: 1px solid #181818;
+}
+
+.catalog-category-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 80px;
+}
+
+.catalog-cat-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.catalog-cat-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.catalog-cat-count {
+  font-size: 10px;
+  font-weight: 700;
+  color: #2e2e2e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.parts-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.part-card-small {
+  background: #0f0f0f;
+  border: 1px solid #1a1a1a;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s;
+}
+
+.part-card-small:hover {
+  border-color: #2a2a2a;
+}
+
+.part-thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #0a0a0a;
+  border: 1px solid #161616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #1e1e1e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.part-card-model {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fe6e02;
+  margin-bottom: 4px;
+}
+
+.part-card-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d0d0d0;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.part-card-desc {
+  font-size: 11px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.part-card-small.hidden {
+  display: none;
+}
+
+.catalog-category-section.all-hidden {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .parts-catalog-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .parts-catalog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .parts-catalog-grid { grid-template-columns: 1fr; }
+  .parts-filter-bar { flex-direction: column; align-items: stretch; }
+  .parts-search-input { min-width: unset; }
+}
